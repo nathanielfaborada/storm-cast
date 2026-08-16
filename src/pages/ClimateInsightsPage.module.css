@@ -1,0 +1,569 @@
+/* Scoped CSS Module for 2-Column ClimateInsightsPage (Full-Width Dashboard) */
+.dashboardContainer {
+  display: grid;
+  grid-template-columns: minmax(300px, 33%) minmax(0, 67%);
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 24px 20px 48px;
+  margin: 0;
+}
+
+@media (min-width: 1200px) {
+  .dashboardContainer {
+    padding: 24px 28px 48px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .dashboardContainer {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px 12px 40px;
+  }
+
+  .mobileHidden {
+    display: none !important;
+  }
+}
+
+/* Left & Right Panels */
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Top Banner Header */
+.overviewBanner {
+  background: linear-gradient(135deg, #0f2b48, #0d4a75);
+  border-radius: 16px;
+  padding: 24px 28px;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(15, 43, 72, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 !important;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .overviewBanner {
+    padding: 16px 18px;
+    gap: 8px;
+    border-radius: 14px;
+  }
+}
+
+.bannerTag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.16);
+  color: #7dd3fc;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .bannerTag {
+    font-size: 0.66rem;
+    padding: 2px 8px;
+    letter-spacing: 0.03em;
+  }
+}
+
+.bannerTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.25;
+  color: #ffffff;
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .bannerTitle {
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+}
+
+.bannerText {
+  font-size: 0.88rem;
+  color: #e0f2fe;
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .bannerText {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+}
+
+/* Macro Drivers Grid (3 Columns on Desktop) */
+.macroGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1100px) {
+  .macroGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.driverCard {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .driverCard {
+    padding: 12px 14px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+}
+
+.habagatCard {
+  border-left: 3.5px solid #2563eb;
+}
+
+.amihanCard {
+  border-left: 3.5px solid #0284c7;
+}
+
+.itczCard {
+  border-left: 3.5px solid #8b5cf6;
+}
+
+.driverCard:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.driverTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.driverTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.driverIcon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.driverTitle {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.25;
+}
+
+@media (max-width: 640px) {
+  .driverTitle {
+    font-size: 0.88rem;
+  }
+}
+
+.seasonPill {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.habagatPill {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.amihanPill {
+  background: #f0f9ff;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+}
+
+.itczPill {
+  background: #faf5ff;
+  color: #7e22ce;
+  border: 1px solid #e9d5ff;
+}
+
+.driverSummary {
+  font-size: 0.78rem;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Key Points Stack */
+.keyPointsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.keyPointRow {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pointTagBlue {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 1px 6px;
+  border-radius: 4px;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.pointTagCyan {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 1px 6px;
+  border-radius: 4px;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.pointTagPurple {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #7e22ce;
+  background: #faf5ff;
+  border: 1px solid #e9d5ff;
+  padding: 1px 6px;
+  border-radius: 4px;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.pointText {
+  font-size: 0.76rem;
+  color: #334155;
+  line-height: 1.4;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Deep Dive Articles */
+.contentCard {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardHeaderStack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.oceanBadge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 2px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.cardTitle {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+  .cardTitle {
+    font-size: 0.98rem;
+  }
+}
+
+.cardBodyText {
+  font-size: 0.84rem;
+  color: #334155;
+  line-height: 1.55;
+  margin: 0;
+  word-break: break-word;
+}
+
+.cardBodyText strong {
+  color: #0f172a;
+}
+
+/* 2-Column Telemetry Metrics Grid */
+.telemetryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .telemetryGrid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.telemetryBox {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.telemetryLabel {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.telemetryVal {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #0284c7;
+  line-height: 1.15;
+}
+
+.telemetrySub {
+  font-size: 0.72rem;
+  color: #64748b;
+  line-height: 1.25;
+}
+
+/* Rapid Intensification Callout Box */
+.riCalloutBox {
+  background: #f0f9ff;
+  border-left: 3.5px solid #0284c7;
+  border-top: 1px solid #e0f2fe;
+  border-right: 1px solid #e0f2fe;
+  border-bottom: 1px solid #e0f2fe;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.riBadge {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #0369a1;
+}
+
+.riText {
+  font-size: 0.78rem;
+  color: #334155;
+  line-height: 1.45;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Projection Key Metrics Grid */
+.projectionBadge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 2px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  width: fit-content;
+}
+
+.projectionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .projectionGrid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.projBox {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .projBox {
+    padding: 10px 12px;
+    gap: 5px;
+  }
+}
+
+.projTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.projTitle {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.projBigBadge {
+  font-size: 0.84rem;
+  font-weight: 900;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.projValHighlight {
+  font-size: 0.84rem;
+  font-weight: 900;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.projDetail {
+  font-size: 0.76rem;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0;
+  word-break: break-word;
+}

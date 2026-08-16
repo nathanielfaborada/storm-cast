@@ -1,0 +1,442 @@
+/* Scoped CSS Module for Modern Dark 4-Column Footer */
+.footerRoot {
+  width: 100%;
+  background: linear-gradient(180deg, #091322 0%, #060c16 100%);
+  color: #f1f5f9;
+  border-top: 1px solid rgba(51, 65, 85, 0.6);
+  margin-top: 48px;
+  padding: 40px 0 24px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .footerRoot {
+    margin-top: 32px;
+    padding: 28px 0 20px;
+  }
+}
+
+.footerContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .footerContainer {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footerContainer {
+    padding: 0 32px;
+  }
+}
+
+/* 4-Column Desktop Grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.55fr 1.05fr 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 1199px) {
+  .mainGrid {
+    grid-template-columns: 1fr 1.4fr 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .mainGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Col 1: Brand & Mission */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  width: fit-content;
+}
+
+.brandLogo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(14, 165, 233, 0.25));
+}
+
+.brandTitleStack {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandTitle {
+  font-size: 1.18rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.brandSubtitle {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brandDesc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.badgeRowBrand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badgePhilippine {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #bae6fd;
+}
+
+.badgeOpenAccess {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #86efac;
+}
+
+/* Col Titles & Headers */
+.colHeaderStack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.colHeaderBadge {
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.colHeader {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Quick Navigation 2-Column Groups Grid */
+.navGroupsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+
+@media (max-width: 640px) {
+  .navGroupsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.navGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+}
+
+.groupIcon {
+  font-size: 0.84rem;
+  flex-shrink: 0;
+}
+
+.groupTitle {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #f8fafc;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.groupLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.subNavLink {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subNavLink:hover {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  transform: translateX(2px);
+}
+
+.bulletDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #38bdf8;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* Official Sources Column */
+.sourceList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sourceItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  border-radius: 8px;
+  padding: 7px 9px;
+  transition: border-color 0.15s ease;
+}
+
+.sourceItem:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.sourceIcon {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.sourceContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.sourceTitle {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.2;
+}
+
+.sourceDesc {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  line-height: 1.3;
+}
+
+/* Telemetry Column */
+.statusCard {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.statusLivePill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.pulseGreen {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulseDot 1.8s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 4px rgba(34, 197, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.telemetryGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.telemetryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+}
+
+.telemetryItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.telemetryLabel {
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.telemetryVal {
+  color: #f1f5f9;
+  font-weight: 800;
+}
+
+.telemetryValAlert {
+  color: #38bdf8;
+  font-weight: 900;
+}
+
+/* Bottom Sub-Footer Row */
+.subFooter {
+  border-top: 1px solid rgba(51, 65, 85, 0.6);
+  margin-top: 28px;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.74rem;
+  color: #64748b;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.subFooterLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.copyright {
+  margin: 0;
+  color: #94a3b8;
+  line-height: 1.35;
+}
+
+.copyright strong {
+  color: #f1f5f9;
+}
+
+.disclaimerNote {
+  margin: 0;
+  font-size: 0.68rem;
+  color: #64748b;
+  line-height: 1.3;
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.legalLink {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.legalLink:hover {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.divider {
+  color: #334155;
+  font-size: 0.65rem;
+}

@@ -1,4 +1,63 @@
-export const navItems = ['Home', 'Typhoon History', 'About', 'Contact']
+export const navItems = [
+  { label: 'Home', path: '/' },
+  { label: 'Typhoon History', path: '/history' },
+  { label: 'Climate Insights', path: '/climate' },
+  { label: 'Preparedness Hub', path: '/preparedness' },
+  { label: 'Live Radar', path: '/radar' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+]
+
+export const navSections = [
+  {
+    category: 'Home Overview',
+    items: [
+      { label: 'Weather Forecast', path: '/?view=forecast', icon: '🌤️', desc: 'Live metrics, 24-hr & 7-day municipal outlook' },
+      { label: 'Disaster Readiness', path: '/?view=readiness', icon: '🛡️', desc: 'Satellite synthesis, Go-Bag & TCWS guide' },
+    ],
+  },
+  {
+    category: 'Typhoon History',
+    items: [
+      { label: 'Storm Archives & Case Studies', path: '/history?view=archives', icon: '📖', desc: 'Chronological storm archive, trajectories & retired names' },
+      { label: 'Climatology & Analytics', path: '/history?view=analytics', icon: '📊', desc: 'Record breakers, storm comparison & climatology trends' },
+    ],
+  },
+  {
+    category: 'Climate Insights',
+    items: [
+      { label: 'Macro Systems & Climate Dynamics', path: '/climate?view=dynamics', icon: '🌊', desc: 'Monsoons (Habagat/Amihan), ITCZ & warm pool thermodynamics' },
+      { label: 'Seasonal Telemetry & Ocean Monitors', path: '/climate?view=telemetry', icon: '📊', desc: 'Active monsoon tracker, SST metrics & ENSO teleconnections' },
+    ],
+  },
+  {
+    category: 'Preparedness Hub',
+    items: [
+      { label: 'Family Action Plans & Safety Protocols', path: '/preparedness?view=plans', icon: '📋', desc: 'Emergency plan generator, landfall timeline & health guides' },
+      { label: 'Emergency Calculators & Offline Comms', path: '/preparedness?view=calculators', icon: '🎒', desc: '72-hr household supply estimator, evac risk & radio dials' },
+    ],
+  },
+  {
+    category: 'Tracking & Radar',
+    items: [
+      { label: 'Interactive Multi-Layer Radar Map', path: '/radar?view=interactive', icon: '🛰️', desc: 'Doppler precipitation, Himawari-9 satellite & wind vectors' },
+      { label: 'PAGASA Doppler Network & Array', path: '/radar?view=network', icon: '📡', desc: '8 national Doppler radar stations, frequencies & live telemetry' },
+    ],
+  },
+  {
+    category: 'Platform Information',
+    items: [
+      { label: 'Platform Capabilities & FAQs', path: '/about?view=platform', icon: '⚙️', desc: 'Core architecture, Philippine climatology & weather FAQs' },
+      { label: 'Mission Mandate & Data Sources', path: '/about?view=mandate', icon: '🏛️', desc: '100% open-access mission, PAGASA data sources & attribution' },
+      { label: 'Verified Agency Directory', path: '/contact?view=directory', icon: '📞', desc: 'Searchable directory of verified national disaster agencies & hotlines' },
+      { label: 'Priority Dials & Protocols', path: '/contact?view=hotlines', icon: '🚨', desc: 'One-touch emergency dials (911, 143, 136, 1555) & calling guides' },
+      { label: 'Terms of Service Agreement', path: '/terms?view=agreement', icon: '📜', desc: 'Official terms of service agreement & emergency disclaimers' },
+      { label: 'Operational Governance & Rules', path: '/terms?view=governance', icon: '⚖️', desc: 'Acceptable use matrix, non-agency notice & Philippine jurisdiction' },
+      { label: 'Privacy Policy Document', path: '/privacy-policy?view=policy', icon: '🔒', desc: 'Official privacy governance, AdSense disclosures & RA 10173' },
+      { label: 'Cookie Matrix & Compliance', path: '/privacy-policy?view=compliance', icon: '🍪', desc: 'Cookie transparency, data retention & NPC legal principles' },
+    ],
+  },
+]
 
 export const climateComponents = [
   {
@@ -156,74 +215,154 @@ export const typhoonYearTopics = [
 
 export const namedTyphoonTopics = [
   {
-    title: 'Typhoon Haiyan',
-    year: 2013,
-    localName: 'Yolanda',
+    title: 'Super Typhoon Man-yi',
+    year: 2024,
+    localName: 'Pepito',
+    category: 'Super Typhoon (Category 5)',
+    maxWinds: '195 km/h (gusts up to 240 km/h)',
+    impactedAreas: 'Catanduanes, Aurora, Polillo Islands, Central Luzon',
     fallback:
-      'Typhoon Haiyan, locally known as Yolanda, was one of the most devastating tropical cyclones to affect the Philippines, causing catastrophic storm surge and wind damage in Eastern Visayas.',
+      'Super Typhoon Pepito (Man-yi) made landfall as an intense super typhoon in Catanduanes and Aurora, bringing catastrophic storm surges, torrential rains, and severe wind destruction.',
   },
   {
-    title: 'Typhoon Rai',
-    year: 2021,
-    localName: 'Odette',
+    title: 'Severe Tropical Storm Trami',
+    year: 2024,
+    localName: 'Kristine',
+    category: 'Severe Tropical Storm',
+    maxWinds: '95 km/h (gusts up to 140 km/h)',
+    impactedAreas: 'Bicol Region, Batangas, Quezon, Northern Luzon',
     fallback:
-      'Typhoon Rai, locally known as Odette, crossed parts of the Philippines and caused severe wind damage, flooding, and disruption in Visayas and Mindanao.',
+      'Severe Tropical Storm Kristine (Trami) dumped historic volumes of rainfall across the Bicol Region and Southern Luzon, triggering massive flash floods and landslides.',
+  },
+  {
+    title: 'Typhoon Gaemi',
+    year: 2024,
+    localName: 'Carina',
+    category: 'Typhoon / Habagat Enhancement',
+    maxWinds: '165 km/h',
+    impactedAreas: 'Metro Manila, Rizal, Bulacan, Bataan, Northern Luzon',
+    fallback:
+      'Typhoon Carina (Gaemi) supercharged the Southwest Monsoon (Habagat), resulting in intense non-stop precipitation and widespread urban flooding across Metro Manila and surrounding provinces.',
   },
   {
     title: 'Typhoon Doksuri',
     year: 2023,
     localName: 'Egay',
+    category: 'Super Typhoon',
+    maxWinds: '175 km/h',
+    impactedAreas: 'Babuyan Islands, Cagayan, Ilocos Norte, Northern Luzon',
     fallback:
-      'Typhoon Doksuri, locally known as Egay, affected northern Luzon with heavy rain, strong winds, flooding, and landslides.',
+      'Typhoon Doksuri, locally known as Egay, battered northern Luzon with destructive eyewall winds, high storm surges, and extensive agricultural and infrastructure damage.',
   },
   {
     title: 'Typhoon Noru',
     year: 2022,
     localName: 'Karding',
+    category: 'Super Typhoon',
+    maxWinds: '195 km/h',
+    impactedAreas: 'Polillo Islands, Aurora, Nueva Ecija, Bulacan',
     fallback:
-      'Typhoon Noru, locally known as Karding, rapidly intensified before affecting Luzon with destructive winds and rainfall.',
+      'Typhoon Noru, locally known as Karding, underwent explosive rapid intensification before striking Luzon with violent winds and heavy rainfall.',
+  },
+  {
+    title: 'Typhoon Rai',
+    year: 2021,
+    localName: 'Odette',
+    category: 'Super Typhoon (Category 5)',
+    maxWinds: '195 km/h (gusts up to 260 km/h)',
+    impactedAreas: 'Siargao, Dinagat Islands, Bohol, Cebu, Palawan',
+    fallback:
+      'Typhoon Rai, locally known as Odette, tore through the Visayas and Mindanao, causing catastrophic wind devastation, total blackouts, and coastal damage comparable to Haiyan.',
   },
   {
     title: 'Typhoon Vamco',
     year: 2020,
     localName: 'Ulysses',
+    category: 'Typhoon',
+    maxWinds: '155 km/h',
+    impactedAreas: 'Metro Manila, Marikina, Rizal, Cagayan Valley',
     fallback:
-      'Typhoon Vamco, locally known as Ulysses, caused widespread flooding in Luzon, including parts of Metro Manila and Cagayan Valley.',
+      'Typhoon Vamco (Ulysses) brought severe river flooding along Marikina and Cagayan river basins following consecutive tropical cyclones in late 2020.',
   },
   {
     title: 'Typhoon Goni',
     year: 2020,
     localName: 'Rolly',
+    category: 'Super Typhoon (Category 5)',
+    maxWinds: '225 km/h (10-min sustained)',
+    impactedAreas: 'Catanduanes, Albay, Bicol Region, Southern Luzon',
     fallback:
-      'Typhoon Goni, locally known as Rolly, made landfall as an extremely intense tropical cyclone and caused major damage in the Bicol Region.',
+      'Typhoon Goni (Rolly) was one of the strongest landfalling tropical cyclones in global history upon striking Catanduanes and Albay with devastating winds and lahar flows.',
   },
   {
     title: 'Typhoon Mangkhut',
     year: 2018,
     localName: 'Ompong',
+    category: 'Super Typhoon',
+    maxWinds: '205 km/h',
+    impactedAreas: 'Cagayan, Benguet, Ilocos Region, Cordilleras',
     fallback:
-      'Typhoon Mangkhut, locally known as Ompong, struck northern Luzon with destructive winds and heavy rainfall.',
+      'Typhoon Mangkhut (Ompong) struck northern Luzon with catastrophic winds and triggered severe mountain landslides in Itogon, Benguet.',
   },
   {
-    title: 'Typhoon Ketsana',
-    year: 2009,
-    localName: 'Ondoy',
+    title: 'Typhoon Haiyan',
+    year: 2013,
+    localName: 'Yolanda',
+    category: 'Super Typhoon (Category 5)',
+    maxWinds: '230 km/h (1-min: 315 km/h)',
+    impactedAreas: 'Tacloban, Leyte, Samar, Eastern Visayas',
     fallback:
-      'Typhoon Ketsana, locally known as Ondoy, brought intense rainfall that triggered widespread flooding across Metro Manila and nearby provinces.',
+      'Typhoon Haiyan (Yolanda) was one of the most powerful and deadly tropical cyclones ever recorded, causing massive 5-meter storm surges and catastrophic destruction in Tacloban and Eastern Visayas.',
   },
   {
     title: 'Typhoon Bopha',
     year: 2012,
     localName: 'Pablo',
+    category: 'Super Typhoon (Category 5)',
+    maxWinds: '185 km/h',
+    impactedAreas: 'Davao Oriental, Compostela Valley, Mindanao',
     fallback:
-      'Typhoon Bopha, locally known as Pablo, was unusually destructive in Mindanao and caused severe flooding and landslide impacts.',
+      'Typhoon Bopha (Pablo) was an unusually intense low-latitude super typhoon that caused catastrophic flash floods and debris flows in eastern Mindanao.',
+  },
+  {
+    title: 'Typhoon Ketsana',
+    year: 2009,
+    localName: 'Ondoy',
+    category: 'Typhoon / Extreme Rainfall',
+    maxWinds: '130 km/h',
+    impactedAreas: 'Metro Manila, Rizal, Laguna, Bulacan',
+    fallback:
+      'Typhoon Ketsana (Ondoy) delivered a month of rainfall in just six hours, causing catastrophic flash floods across Metro Manila and reshaping Philippine flood management.',
+  },
+  {
+    title: 'Typhoon Fengshen',
+    year: 2008,
+    localName: 'Frank',
+    category: 'Typhoon',
+    maxWinds: '165 km/h',
+    impactedAreas: 'Iloilo, Panay Island, Romblon, Central Philippines',
+    fallback:
+      'Typhoon Frank caused severe river flooding in Iloilo and was associated with the tragic sinking of the MV Princess of the Stars off Romblon.',
+  },
+  {
+    title: 'Typhoon Durian',
+    year: 2006,
+    localName: 'Reming',
+    category: 'Super Typhoon (Category 4)',
+    maxWinds: '195 km/h',
+    impactedAreas: 'Albay, Legazpi City, Bicol Region',
+    fallback:
+      'Typhoon Reming triggered massive volcanic mudslides (lahar) from the slopes of Mount Mayon, burying surrounding villages in Albay.',
   },
   {
     title: 'Tropical Storm Thelma',
     year: 1991,
     localName: 'Uring',
+    category: 'Tropical Storm',
+    maxWinds: '85 km/h',
+    impactedAreas: 'Ormoc City, Leyte, Visayas',
     fallback:
-      'Tropical Storm Thelma, locally known as Uring, produced extreme rainfall and flooding that caused severe loss of life, especially around Ormoc, Leyte.',
+      'Tropical Storm Thelma (Uring) produced sudden devastating flash flooding down deforested mountainsides around Ormoc City, resulting in thousands of casualties.',
   },
 ]
 

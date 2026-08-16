@@ -17,7 +17,7 @@ const privacySections = [
   },
   {
     title: 'External links',
-    body: 'Links to services such as Zoom Earth, Wikipedia, Open-Meteo, Instagram, LinkedIn, and other external sites open outside StormCast PH and follow their own privacy policies.',
+    body: 'Links to services such as Windy.com, Wikipedia, Open-Meteo, Instagram, LinkedIn, and other external sites open outside StormCast PH and follow their own privacy policies.',
   },
   {
     title: 'Data storage',

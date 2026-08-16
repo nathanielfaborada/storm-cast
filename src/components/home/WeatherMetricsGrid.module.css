@@ -1,0 +1,312 @@
+/* Scoped CSS Module for WeatherMetricsGrid */
+.metricsContainer {
+  display: flex !important;
+  flex-direction: column !important;
+  background: transparent !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+}
+
+/* 1. Balanced Full-Width Blue Hero Banner */
+.heroBanner {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  background: linear-gradient(135deg, #1e40af, #1d4ed8) !important;
+  color: #ffffff !important;
+  padding: 18px 22px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 14px rgba(30, 64, 175, 0.16) !important;
+  gap: 16px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .heroBanner {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+}
+
+/* Left Side: Temperature, Condition, Feels Like */
+.heroLeft {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+.tempRow {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+}
+
+.tempReading {
+  display: flex !important;
+  align-items: flex-start !important;
+  line-height: 1 !important;
+}
+
+.tempValue {
+  font-size: clamp(2.8rem, 3.8vw, 3.6rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.tempUnit {
+  font-size: 1.4rem !important;
+  font-weight: 800 !important;
+  margin-top: 4px !important;
+}
+
+.conditionMeta {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.conditionBadge {
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  font-size: 0.86rem !important;
+  font-weight: 800 !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  backdrop-filter: blur(4px) !important;
+  width: fit-content !important;
+}
+
+.feelsLike {
+  font-size: 0.88rem !important;
+  color: #e0f2fe !important;
+  font-weight: 600 !important;
+}
+
+.feelsLike strong {
+  font-weight: 800 !important;
+  color: #ffffff !important;
+}
+
+.observationSubtext {
+  margin: 0 !important;
+  font-size: 0.78rem !important;
+  color: #bfdbfe !important;
+  font-weight: 500 !important;
+}
+
+/* Right Side: High/Low, Humidity, Pressure, Wind & Dynamic Graphic */
+.heroRight {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  min-width: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.telemetryStack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  align-items: flex-end !important;
+  text-align: right !important;
+  min-width: 0 !important;
+}
+
+.hiLoPill {
+  background: rgba(0, 0, 0, 0.22) !important;
+  padding: 4px 12px !important;
+  border-radius: 6px !important;
+  font-size: 0.86rem !important;
+  color: #f1f5f9 !important;
+  display: flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+.hiLoPill strong {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.statDivider {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.atmosphericTags {
+  display: flex !important;
+  gap: 6px !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-end !important;
+}
+
+.metricTag {
+  background: rgba(255, 255, 255, 0.14) !important;
+  font-size: 0.76rem !important;
+  color: #e0f2fe !important;
+  font-weight: 700 !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+  white-space: nowrap !important;
+}
+
+.weatherGraphicBox {
+  width: 62px !important;
+  height: 62px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(8px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+  overflow: hidden !important;
+  padding: 8px !important;
+}
+
+.weatherGraphicSvg {
+  width: 46px !important;
+  height: 46px !important;
+  background: transparent !important;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.25)) !important;
+}
+
+/* 2. Strict 4-Column Metric Grid on Desktop */
+.gridCards {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0.75rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  margin-top: 12px !important;
+}
+
+@media (max-width: 768px) {
+  .gridCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gridCards {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+}
+
+.metricCard {
+  display: grid !important;
+  grid-template-columns: 38px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  padding: 10px 12px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  min-height: 66px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.15s ease !important;
+  overflow: hidden !important;
+}
+
+.metricCard:hover {
+  background: #f8fafc !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08) !important;
+  transform: translateY(-1px) !important;
+}
+
+.iconBox {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 8px !important;
+  display: grid !important;
+  place-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.iconBox img {
+  width: 24px !important;
+  height: 24px !important;
+  object-fit: contain !important;
+}
+
+.iconBox.rain { background: #f0fdf4 !important; }
+.iconBox.wind { background: #fefce8 !important; }
+.iconBox.heat { background: #fff1f2 !important; }
+.iconBox.cold { background: #eff6ff !important; }
+
+.cardInfo {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.cardLabel {
+  font-size: 0.74rem !important;
+  color: #475569 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  display: block !important;
+  min-width: 0 !important;
+}
+
+.cardValue {
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  display: block !important;
+  min-width: 0 !important;
+}
+
+.cardHint {
+  font-size: 0.74rem !important;
+  color: #475569 !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  display: block !important;
+  min-width: 0 !important;
+}
+
+/* Mobile Alignment for Banner */
+@media (max-width: 767px) {
+  .heroRight {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  .telemetryStack {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .atmosphericTags {
+    justify-content: flex-start !important;
+  }
+}

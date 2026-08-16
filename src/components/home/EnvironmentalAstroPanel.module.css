@@ -1,0 +1,526 @@
+/* Scoped CSS Module for EnvironmentalAstroPanel */
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  margin-top: 4px;
+}
+
+@media (max-width: 860px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.panelCard {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .panelCard {
+    padding: 12px 14px;
+    border-radius: 14px;
+    gap: 10px;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cardTitleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.panelIcon {
+  font-size: 1.1rem;
+}
+
+.cardTitle {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+@media (min-width: 640px) {
+  .cardTitle {
+    font-size: 1.08rem;
+  }
+}
+
+.cardSubtitle {
+  font-size: 0.76rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+
+.headerBadge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #334155;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+
+/* Environmental Gauges Styles */
+.gaugeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .gaugeGrid {
+    gap: 8px;
+  }
+}
+
+.gaugeTile {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .gaugeTile {
+    padding: 8px 10px;
+    gap: 5px;
+  }
+}
+
+.gaugeHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.gaugeLabel {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.gaugeValueRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+}
+
+.gaugeMainVal {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  .gaugeMainVal {
+    font-size: 1.25rem;
+  }
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .statusPill {
+    font-size: 0.68rem;
+    padding: 2px 6px;
+  }
+}
+
+.statusPill.good {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.statusPill.moderate {
+  background: #fef9c3;
+  color: #a16207;
+  border: 1px solid #fde047;
+}
+
+.statusPill.uvMod {
+  background: #fed7aa;
+  color: #c2410c;
+  border: 1px solid #fdba74;
+}
+
+.gaugeProgressBar {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 1px 0;
+}
+
+.gaugeProgressFill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.gaugeProgressFill.aqiFill {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.gaugeProgressFill.uvFill {
+  background: linear-gradient(90deg, #eab308, #ea580c);
+}
+
+.gaugeHint {
+  font-size: 0.68rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Fine Particles Chemistry Strip */
+.fineMetricsRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 8px 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 420px) {
+  .fineMetricsRow {
+    padding: 6px 8px;
+    gap: 4px;
+  }
+}
+
+.fineItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.fineLabel {
+  font-size: 0.7rem;
+  color: #64748b;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.fineVal {
+  font-size: 0.84rem;
+  color: #0f172a;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .fineVal {
+    font-size: 0.78rem;
+  }
+}
+
+/* Astronomical & Daylight Cycles */
+.sunMoonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .sunMoonGrid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.astroTile {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  box-sizing: border-box;
+  transition: all 0.15s ease;
+}
+
+.astroTile:hover {
+  background: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+}
+
+.astroIconBox {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.sunIconBox {
+  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+  border: 1px solid #fed7aa;
+}
+
+.moonIconBox {
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border: 1px solid #bae6fd;
+}
+
+.astroDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.astroLabel {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.astroTime {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.astroSubtext {
+  font-size: 0.72rem;
+  color: #0284c7;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Coastal Marine & Sea State Block */
+.coastalBlock {
+  background: linear-gradient(135deg, #f8fafc, #f0f9ff);
+  border: 1px solid #bae6fd;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.coastalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.coastalTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.coastalTitle {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #0369a1;
+}
+
+.waveBadge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #0c4a6e;
+  background: #e0f2fe;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid #7dd3fc;
+  white-space: nowrap;
+}
+
+/* Tide Cards: Structured 2-column Grid with Zero Overflow */
+.tideRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tideItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  background: #ffffff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #e0f2fe;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.tideHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+}
+
+.tideIconBubble {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.tideIconBubble.highTide {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.tideIconBubble.lowTide {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.tideType {
+  font-size: 0.7rem;
+  color: #64748b;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.tideData {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.tideHeight {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.tideTime {
+  font-size: 0.72rem;
+  color: #0284c7;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.advisoryCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.advisoryIcon {
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.advisoryFootnote {
+  font-size: 0.72rem;
+  color: #0369a1;
+  margin: 0;
+  line-height: 1.35;
+}

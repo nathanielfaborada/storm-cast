@@ -1,0 +1,327 @@
+/* Scoped CSS Module for HistoricalTrackViewerCard */
+.cardContainer {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .cardContainer {
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mapIcon {
+  font-size: 1.15rem;
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 0.98rem;
+  }
+}
+
+.subtitle {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .subtitle {
+    font-size: 0.74rem;
+  }
+}
+
+/* Storm Selector Tabs - Touch-Friendly Swipe on Mobile */
+.stormTabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .stormTabs {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    gap: 6px;
+  }
+  .stormTabs::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.stormTabBtn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .stormTabBtn {
+    padding: 5px 11px;
+    font-size: 0.74rem;
+  }
+}
+
+.stormTabBtn:hover {
+  background: #e2e8f0;
+}
+
+.stormTabBtn.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 1px 4px rgba(37, 99, 235, 0.25);
+}
+
+/* Track Visual Stage */
+.trackVisualBox {
+  background: linear-gradient(135deg, #091a2e, #132d4b);
+  border-radius: 10px;
+  padding: 16px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .trackVisualBox {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+}
+
+.trackHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.stormIdentity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .stormIdentity {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.stormName {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .stormName {
+    font-size: 1.02rem;
+  }
+}
+
+.badgeGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.stormYearPill {
+  font-size: 0.72rem;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: #7dd3fc;
+  font-weight: 800;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+}
+
+.catBadge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #dc2626;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* Waypoints Timeline: 4 Columns Desktop -> 2 Columns Tablet/Mobile -> 1 Column < 380px */
+.waypointStack {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 860px) {
+  .waypointStack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .waypointStack {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.waypointCard {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  backdrop-filter: blur(4px);
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.wpStage {
+  font-size: 0.72rem;
+  color: #38bdf8;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.wpDate {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.wpLocation {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .wpLocation {
+    font-size: 0.8rem;
+  }
+}
+
+.wpWind {
+  font-size: 0.74rem;
+  color: #fde047;
+  font-weight: 700;
+  line-height: 1.25;
+  word-break: break-word;
+  margin-top: 1px;
+}
+
+.summaryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.28);
+  padding: 10px 12px;
+  border-radius: 8px;
+  border-left: 3.5px solid #38bdf8;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 640px) {
+  .summaryContainer {
+    padding: 8px 10px;
+  }
+}
+
+.summaryHeading {
+  font-size: 0.78rem;
+  color: #7dd3fc;
+  font-weight: 800;
+}
+
+.trackSummaryText {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .trackSummaryText {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+}

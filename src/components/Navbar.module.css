@@ -1,0 +1,303 @@
+/* ==========================================================================
+   Header & Navbar Design System (Sticky, Responsive, Flush Top)
+   ========================================================================== */
+
+/* 1. Sticky Position & Flush Top */
+.headerWrapper {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 50 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+  box-sizing: border-box;
+}
+
+/* 2. Flexbox Space Allocation */
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto !important;
+  padding: 0 16px;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .navContainer {
+    padding: 0 24px;
+    height: 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navContainer {
+    padding: 0 32px;
+  }
+}
+
+/* 3. Responsive Brand Sizing & Truncation (flex-1 min-w-0) */
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.brandLogo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .brandLogo {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.brandTitle {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 640px) {
+  .brandTitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Hide secondary subtitle on mobile (< 640px / hidden sm:block) */
+.brandSubtitle {
+  display: none;
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: -1px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 640px) {
+  .brandSubtitle {
+    display: block;
+  }
+}
+
+/* 4. Desktop Navigation Links */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1023px) {
+  .desktopNav {
+    display: none;
+  }
+}
+
+.navLink {
+  padding: 8px 12px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #475569;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: #2563eb;
+  background: rgba(241, 245, 249, 0.8);
+}
+
+.navLink.active {
+  color: #2563eb;
+  background: rgba(239, 246, 255, 0.8);
+  font-weight: 600;
+  border-bottom: 2px solid #2563eb;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* 5. Mobile Hamburger Button (flex-shrink: 0, protected from overflow) */
+.hamburgerBtn {
+  display: none;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  color: #0f172a;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1023px) {
+  .hamburgerBtn {
+    display: flex;
+  }
+}
+
+.hamburgerBtn:hover,
+.hamburgerBtn:active {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  transform: scale(0.98);
+}
+
+/* 6. Mobile Dropdown Menu */
+.mobileMenuWrapper {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #cbd5e1;
+  box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.16), 0 6px 16px -2px rgba(15, 23, 42, 0.08);
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  animation: fadeInDown 0.18s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileMenuContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mobileNavGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mobileGroupLabel {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0 8px 3px;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #334155;
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+  min-height: 42px;
+  box-sizing: border-box;
+}
+
+.subItemLink {
+  margin-left: 14px;
+  padding: 8px 12px 8px 14px;
+  font-size: 13px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #3b82f6;
+}
+
+.linkTitleText {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subItemTag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 1px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.mobileLink:hover {
+  background: #f8fafc;
+  color: #2563eb;
+}
+
+.subItemLink:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  border-left-color: #2563eb;
+}
+
+.mobileLink.active {
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 700;
+}

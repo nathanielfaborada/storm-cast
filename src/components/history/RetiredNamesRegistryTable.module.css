@@ -1,0 +1,292 @@
+/* Scoped CSS Module for RetiredNamesRegistryTable */
+.tableCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .tableCard {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+}
+
+.tableHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.registryIcon {
+  font-size: 1.15rem;
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 0.98rem;
+  }
+}
+
+.subtitle {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .subtitle {
+    font-size: 0.74rem;
+  }
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 240px;
+}
+
+@media (max-width: 640px) {
+  .searchWrapper {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  left: 9px;
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  height: 38px;
+  padding: 6px 12px 6px 30px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: #0f172a;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+/* 1. Desktop Tabular View (Visible on >= 768px) */
+.tableResponsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  scrollbar-width: thin;
+}
+
+@media (max-width: 767px) {
+  .tableResponsive {
+    display: none;
+  }
+}
+
+.registryTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.82rem;
+}
+
+.registryTable th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 800;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+}
+
+.registryTable td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.registryTable tr:last-child td {
+  border-bottom: none;
+}
+
+.registryTable tr:hover td {
+  background: #f8fafc;
+}
+
+.localNameCell {
+  font-weight: 900;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.intlNameCell {
+  color: #64748b;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.yearPill {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #1d4ed8;
+  background: #eff6ff;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid #bfdbfe;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.damageCell {
+  font-weight: 800;
+  color: #b91c1c;
+  white-space: nowrap;
+}
+
+.replacementBadge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #047857;
+  background: #ecfdf5;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #a7f3d0;
+  white-space: nowrap;
+}
+
+/* 2. Mobile Responsive Card List (Visible on < 768px) */
+.mobileCardList {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobileCardList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+}
+
+.mobileRetiredCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+.mobileCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.mobileNameRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.mobileLocalName {
+  font-size: 0.94rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.mobileIntlName {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+.mobileImpact {
+  font-size: 0.78rem;
+  color: #334155;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.mobileMetaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.74rem;
+}
+
+.mobileDamage {
+  color: #b91c1c;
+  font-weight: 800;
+}
+
+.mobileReplacement {
+  color: #047857;
+  font-size: 0.72rem;
+  background: #ecfdf5;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid #a7f3d0;
+  white-space: nowrap;
+}
+
+.footerNote {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}

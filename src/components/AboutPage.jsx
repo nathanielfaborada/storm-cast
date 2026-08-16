@@ -1,11 +1,9 @@
-import { GoogleAdSlot } from './GoogleAdSlot'
-
 const featureList = [
   '7-day local weather forecast powered by Open-Meteo',
   'Searchable location forecast for cities and municipalities',
   'Climate and typhoon learning panels with concise explanations',
   'Philippine typhoon history organized by year and searchable by storm name',
-  'Quick access to live satellite viewing through Zoom Earth',
+  'Quick access to live radar & satellite viewing through Windy',
 ]
 
 const sourceList = [
@@ -18,8 +16,8 @@ const sourceList = [
     detail: 'Background summaries for climate and typhoon history topics.',
   },
   {
-    name: 'Zoom Earth',
-    detail: 'External live satellite map access for visual weather monitoring.',
+    name: 'Windy.com',
+    detail: 'External live radar & satellite interactive map access for visual weather monitoring.',
   },
 ]
 
@@ -74,8 +72,6 @@ export function AboutPage() {
           ))}
         </div>
       </section>
-
-      <GoogleAdSlot className="inline-google-ad" label="Sponsored weather awareness" />
 
       <section className="panel about-section">
         <div className="about-section-header">

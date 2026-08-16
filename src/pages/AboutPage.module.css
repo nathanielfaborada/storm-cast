@@ -1,0 +1,779 @@
+/* Scoped CSS Module for AboutPage (2-Column Architecture matching StormCast PH Design System) */
+.dashboardContainer {
+  display: grid;
+  grid-template-columns: minmax(300px, 33%) minmax(0, 67%);
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 24px 20px 48px;
+  margin: 0;
+}
+
+@media (min-width: 1200px) {
+  .dashboardContainer {
+    padding: 24px 28px 48px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .dashboardContainer {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px 16px 40px;
+  }
+
+  .mobileHidden {
+    display: none !important;
+  }
+}
+
+/* Left & Right Panels */
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 1. Left Column: Platform Mission Banner */
+.missionBanner {
+  background: linear-gradient(135deg, #091e3a, #0b3954);
+  border-radius: 16px;
+  padding: 20px 22px;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(9, 30, 58, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #1e40af;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .missionBanner {
+    padding: 14px 16px;
+    gap: 8px;
+    border-radius: 14px;
+  }
+}
+
+.bannerTag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  background: rgba(34, 197, 94, 0.18);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  padding: 2px 8px;
+  border-radius: 999px;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .bannerTag {
+    font-size: 0.64rem;
+    padding: 2px 7px;
+  }
+}
+
+.pulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulseDot 1.8s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(34, 197, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.missionTitle {
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .missionTitle {
+    font-size: 1.12rem;
+  }
+}
+
+.missionText {
+  font-size: 0.84rem;
+  color: #e0f2fe;
+  line-height: 1.45;
+  margin: 0;
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .missionText {
+    font-size: 0.78rem;
+  }
+}
+
+/* Visual Stats 2x2 Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 2px;
+}
+
+.statCard {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(51, 65, 85, 0.7);
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.statLabel {
+  font-size: 0.64rem;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.statVal {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #38bdf8;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 2. Official Advisory Card */
+.advisoryCard {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .advisoryCard {
+    padding: 12px 14px;
+    gap: 6px;
+    border-radius: 14px;
+  }
+}
+
+.advisoryTag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fcd34d;
+  padding: 2px 6px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.advisoryPrecedence {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #78350f;
+  background: #fef9c3;
+  border: 1px solid #fde047;
+  padding: 2px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.advisoryTitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #92400e;
+  margin: 0;
+  line-height: 1.25;
+}
+
+@media (max-width: 640px) {
+  .advisoryTitle {
+    font-size: 0.88rem;
+  }
+}
+
+.advisoryText {
+  font-size: 0.78rem;
+  color: #78350f;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.advisoryText strong {
+  color: #451a03;
+}
+
+/* 3. Data Sources Card */
+.sourcesCard {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .sourcesCard {
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+}
+
+.topBadgeSources {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 2px 6px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sourcesTitle {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+@media (max-width: 640px) {
+  .sourcesTitle {
+    font-size: 0.96rem;
+  }
+}
+
+.sourcesSubtitle {
+  font-size: 0.74rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.sourceItems {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sourceItem {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 3.5px solid #2563eb;
+  border-radius: 9px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  box-sizing: border-box;
+}
+
+.sourceTop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sourceDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2563eb;
+  flex-shrink: 0;
+}
+
+.sourceName {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.sourceDetail {
+  font-size: 0.72rem;
+  color: #475569;
+  line-height: 1.38;
+  margin: 0;
+}
+
+/* Card Header Stack */
+.cardHeaderStack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.badgeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.topBadgeOverview {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 2px 6px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.topBadgeClimate {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 2px 6px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.topBadgeFaq {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #7c3aed;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  padding: 2px 6px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sourceBadgeOverview {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 2px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+/* 4. Right Column: Overview Card */
+.overviewCard {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .overviewCard {
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+}
+
+.overviewTitle {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+@media (max-width: 640px) {
+  .overviewTitle {
+    font-size: 0.96rem;
+  }
+}
+
+.overviewSubtitle {
+  font-size: 0.74rem;
+  color: #64748b;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Feature Capabilities Grid (6 Cards) */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.featureCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.featureCard:hover {
+  background: #ffffff;
+  border-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.featureTop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.featureIcon {
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.featureCardTitle {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.featureCardDesc {
+  font-size: 0.72rem;
+  color: #475569;
+  line-height: 1.38;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Climatology Unique Card */
+.climateCard {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .climateCard {
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+}
+
+.climateTitle {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+@media (max-width: 640px) {
+  .climateTitle {
+    font-size: 0.96rem;
+  }
+}
+
+.climateSubtitle {
+  font-size: 0.74rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.climateGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .climateGrid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.climateBox {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-sizing: border-box;
+}
+
+.climateBoxHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.climateBoxTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.climateBoxIcon {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.climateBoxTitle {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.climateBoxTag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 1px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.climateBoxDesc {
+  font-size: 0.72rem;
+  color: #475569;
+  line-height: 1.38;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* FAQ Accordion Section */
+.faqSection {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .faqSection {
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+}
+
+.faqSectionTitle {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+@media (max-width: 640px) {
+  .faqSectionTitle {
+    font-size: 0.96rem;
+  }
+}
+
+.faqSubtitle {
+  font-size: 0.74rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.faqItem {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.faqItem[open] {
+  background: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+}
+
+.faqSummary {
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #0f172a;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  line-height: 1.3;
+}
+
+.faqSummary:hover {
+  color: #2563eb;
+}
+
+.faqQuestionText {
+  flex: 1;
+  min-width: 0;
+}
+
+.faqChevron {
+  font-size: 0.65rem;
+  color: #2563eb;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.faqItem[open] .faqChevron {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  margin-top: 6px;
+  margin-bottom: 0;
+  font-size: 0.74rem;
+  color: #475569;
+  line-height: 1.45;
+}

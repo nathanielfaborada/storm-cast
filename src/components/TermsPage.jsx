@@ -9,7 +9,7 @@ const termsSections = [
   },
   {
     title: 'Third-party data',
-    body: 'Forecasts, summaries, satellite links, and contact form handling may rely on third-party providers such as Open-Meteo, Wikipedia, Zoom Earth, and Web3Forms. Their data availability and accuracy are outside the direct control of StormCast PH.',
+    body: 'Forecasts, summaries, satellite links, and contact form handling may rely on third-party providers such as Open-Meteo, Wikipedia, Windy.com, and Web3Forms. Their data availability and accuracy are outside the direct control of StormCast PH.',
   },
   {
     title: 'Content accuracy',
