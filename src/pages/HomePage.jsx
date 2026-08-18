@@ -1,3 +1,4 @@
+import { SITE_URL } from '../site.config.js'
 import { useState, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { SEO } from '../components/SEO'
@@ -103,7 +104,7 @@ export function HomePage({
       <SEO
         title={`StormCast PH | Weather Forecast for ${location.name} & PAR Tracking`}
         description={`Real-time 7-day weather forecast, hourly rain probability, current heat index, and PAGASA-aligned cyclone intelligence for ${location.name}.`}
-        canonical="https://stormcastph.com/"
+        canonical={`${SITE_URL}/`}
         keywords="Philippine weather forecast, Manila weather, PAGASA typhoon tracker, rain radar, 7-day forecast, heat index, tropical weather"
       />
 
@@ -113,6 +114,60 @@ export function HomePage({
         className={`${styles.leftPanel} ${activeMobileView !== 'readiness' ? styles.mobileHidden : ''} lg:col-span-4 space-y-4 m-0 p-0 w-full min-w-0`}
         aria-label="Regional Climate Intelligence & Disaster Preparedness"
       >
+        {/* 0. Philippine Weather Context — Static editorial text for Google crawlability */}
+        <article className={styles.editorialCard} aria-label="Philippine Weather and Typhoon Season Guide">
+          <div className={styles.editorialHeader}>
+            <span className={styles.editorialTag}>🌀 Weather Intelligence</span>
+            <h2 className={styles.editorialTitle}>Philippine Weather Forecast &amp; Typhoon Awareness</h2>
+          </div>
+
+          <div className={styles.editorialBody}>
+            <p className={styles.editorialPara}>
+              StormCast PH delivers real-time weather forecasts, hourly rain probability, and
+              PAGASA-aligned cyclone intelligence for every Philippine city and municipality —
+              from Batanes in the north to Tawi-Tawi in the south.
+            </p>
+
+            <div className={styles.editorialSection}>
+              <h3 className={styles.editorialSectionTitle}>🌧️ Typhoon Season in the Philippines</h3>
+              <p className={styles.editorialPara}>
+                The Philippines experiences an average of <strong>20 tropical cyclones</strong> annually,
+                with peak activity from <strong>July through October</strong>. Typhoons that enter
+                the Philippine Area of Responsibility (PAR) are tracked and named by
+                <strong> DOST-PAGASA</strong>. The Western Pacific basin is the world&apos;s most
+                active typhoon basin, making real-time monitoring essential for Filipino communities.
+              </p>
+            </div>
+
+            <div className={styles.editorialSection}>
+              <h3 className={styles.editorialSectionTitle}>🌬️ Amihan &amp; Habagat Monsoons</h3>
+              <p className={styles.editorialPara}>
+                Philippine weather is governed by two monsoon systems. The <strong>Amihan</strong>{' '}
+                (northeast monsoon) brings cool, dry weather to Luzon from November to February,
+                while the <strong>Habagat</strong> (southwest monsoon) delivers heavy rains to
+                western Philippines from June to October. Understanding these patterns helps
+                communities plan for floods, landslides, and agricultural impacts.
+              </p>
+            </div>
+
+            <div className={styles.editorialSection}>
+              <h3 className={styles.editorialSectionTitle}>⚠️ PAGASA Tropical Cyclone Warning Signals</h3>
+              <p className={styles.editorialPara}>
+                PAGASA issues Tropical Cyclone Wind Signals (TCWS) from <strong>Signal No. 1</strong>{' '}
+                (winds 30–60 km/h expected in 36 hours) up to <strong>Signal No. 5</strong>{' '}
+                (catastrophic winds exceeding 220 km/h within 12 hours). Always follow the official
+                PAGASA bulletin and your Local Government Unit (LGU) for evacuation orders.
+              </p>
+            </div>
+
+            <div className={styles.editorialLinks}>
+              <Link to="/history" className={styles.editorialLink}>📊 Typhoon Archive</Link>
+              <Link to="/climate" className={styles.editorialLink}>🌡️ Climate Insights</Link>
+              <Link to="/preparedness" className={styles.editorialLink}>🏠 Preparedness Hub</Link>
+            </div>
+          </div>
+        </article>
+
         <SatellitePanel />
         <GoBagChecklistCard />
         <TcwsReferenceCard />
@@ -129,14 +184,17 @@ export function HomePage({
           {!alertDismissed && (
             <aside className={styles.alertBanner} aria-label="PAR Monitoring Alert">
               <div className={styles.alertLeft}>
-                <span className={styles.pulseDot} aria-hidden="true" />
-                <strong className={styles.alertTag}>PAR STATUS</strong>
+                {/* Dot + badge always stay on the same row */}
+                <div className={styles.alertBadgeRow}>
+                  <span className={styles.pulseDot} aria-hidden="true" />
+                  <strong className={styles.alertTag}>PAR STATUS</strong>
+                </div>
                 <span className={styles.alertMessage}>
                   🟢 <strong>Normal Maritime Flow:</strong> No active cyclone inside PAR today.
                 </span>
               </div>
               <div className={styles.alertActions}>
-                <Link to="/typhoon-history" className={styles.alertCta}>
+                <Link to="/history" className={styles.alertCta}>
                   View History →
                 </Link>
                 <button

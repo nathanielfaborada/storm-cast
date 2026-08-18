@@ -1,3 +1,4 @@
+import { SITE_URL } from '../site.config.js'
 import { useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { SEO } from '../components/SEO'
@@ -107,7 +108,7 @@ export function TyphoonHistoryPage() {
       <SEO
         title="Philippine Typhoon Historical Archives & Case Studies | StormCast PH"
         description="Comprehensive historical database of Philippine tropical cyclones, side-by-side storm comparison tool, trajectory waypoints, retired storm names registry, and meteorological records."
-        canonical="https://stormcastph.com/typhoon-history"
+        canonical={`${SITE_URL}/history`}
         keywords="Philippine typhoon history, Yolanda, Odette, Kristine, Pepito, retired storm names, PAGASA TCWS archives, typhoon trajectory"
       />
 

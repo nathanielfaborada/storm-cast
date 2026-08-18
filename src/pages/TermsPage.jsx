@@ -1,3 +1,4 @@
+import { SITE_URL } from '../site.config.js'
 import { useSearchParams } from 'react-router-dom'
 import { SEO } from '../components/SEO'
 import styles from './TermsPage.module.css'
@@ -38,7 +39,7 @@ export function TermsPage() {
       <SEO
         title="Terms of Service & Emergency Disclaimer | StormCast PH"
         description="Official Terms of Service and Emergency Disclaimer for StormCast PH. Review our conditions of use, meteorological limitations of liability, and official warning directives."
-        canonical="https://stormcastph.com/terms"
+        canonical={`${SITE_URL}/terms`}
         keywords="StormCast PH terms of service, weather disclaimer, PAGASA emergency waiver, terms and conditions, disaster risk reduction terms"
       />
 

@@ -1,3 +1,4 @@
+import { SITE_URL } from '../site.config.js'
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { SEO } from '../components/SEO'
@@ -65,7 +66,7 @@ export function LiveRadarPage() {
       <SEO
         title="Live Philippine Doppler Weather Radar & Himawari-9 Satellite | StormCast PH"
         description="Real-time Philippine Doppler weather radar reflectivity, Himawari-9 multispectral satellite imagery, wind stream vectors, and DOST-PAGASA regional station status."
-        canonical="https://stormcastph.com/radar"
+        canonical={`${SITE_URL}/radar`}
         keywords="Philippine weather radar, PAGASA Doppler radar, live rain radar, Himawari-9 satellite, Manila radar, typhoon radar tracker, dBZ reflectivity"
       />
 

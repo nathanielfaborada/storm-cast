@@ -1,0 +1,12 @@
+[build]
+  # Use the SSG prerender pipeline instead of plain vite build
+  command = "npm run build:ssg"
+  publish = "dist"
+
+# Netlify serves pre-rendered HTML files from dist/ directly for known routes.
+# This catch-all fallback handles any route without a pre-rendered file
+# (e.g. 404 pages, deep dynamic segments). React's router takes over client-side.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,3 +1,4 @@
+import { SITE_URL } from '../site.config.js'
 import { useState, useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { SEO } from '../components/SEO'
@@ -199,7 +200,7 @@ export function ContactPage() {
       <SEO
         title="Verified Philippine Disaster & Emergency Contacts Directory | StormCast PH"
         description="Comprehensive, verified directory of reliable Philippine emergency hotlines: 911, NDRRMC, PAGASA Weather Desk, Coast Guard, Red Cross, BFP Rescue, DOH, and utility breakdown lines."
-        canonical="https://stormcastph.com/contact"
+        canonical={`${SITE_URL}/contact`}
         keywords="Philippine emergency hotlines, 911 Philippines, NDRRMC contact number, PAGASA hotline, Red Cross 143, Coast Guard rescue number, flood rescue hotlines"
       />
 
@@ -301,6 +302,35 @@ export function ContactPage() {
                 <strong>Persons in Danger:</strong> Specify exact number of trapped individuals, elderly, infants, pregnant women, or injured persons.
               </div>
             </div>
+          </div>
+        </article>
+
+        {/* 4. Platform Contact — Direct email for AdSense reviewer verification */}
+        <article className={styles.platformContactCard} aria-label="Contact StormCast PH Platform">
+          <div className={styles.cardHeaderStack}>
+            <div className={styles.badgeRow}>
+              <span className={styles.topBadgeContact}>✉️ Platform Inquiries</span>
+              <span className={styles.sourceBadgeGuide}>Direct Contact</span>
+            </div>
+            <h3 className={styles.platformContactTitle}>Contact the Creator</h3>
+          </div>
+          <p className={styles.platformContactDesc}>
+            For feedback, data corrections, partnership inquiries, or media requests about
+            StormCast PH, reach out directly to the platform creator.
+          </p>
+          <div className={styles.contactCreatorRow}>
+            <div className={styles.creatorInfo}>
+              <strong className={styles.creatorName}>Nathaniel Faborada</strong>
+              <span className={styles.creatorLocation}>Bulacan, Philippines</span>
+            </div>
+            <a
+              href="mailto:faboradanathaniel@gmail.com"
+              className={styles.creatorEmailBtn}
+              aria-label="Email Nathaniel Faborada"
+            >
+              <span aria-hidden="true">✉️</span>
+              faboradanathaniel@gmail.com
+            </a>
           </div>
         </article>
       </section>

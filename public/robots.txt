@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stormcastph.com/sitemap.xml
+Sitemap: https://stormcast-ph.netlify.app/sitemap.xml
+

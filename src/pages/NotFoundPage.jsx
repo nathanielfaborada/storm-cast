@@ -1,3 +1,4 @@
+import { SITE_URL } from '../site.config.js'
 import { Link } from 'react-router-dom'
 import { SEO } from '../components/SEO'
 
@@ -7,7 +8,7 @@ export function NotFoundPage() {
       <SEO
         title="404 Page Not Found | StormCast PH"
         description="The weather forecast or typhoon archive page you requested cannot be found. Return to StormCast PH Home for Philippine forecasts and radar."
-        canonical="https://stormcastph.com/404"
+        canonical={`${SITE_URL}/404`}
       />
 
       <section

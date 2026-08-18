@@ -1,3 +1,4 @@
+import { SITE_URL } from '../site.config.js'
 import { useSearchParams } from 'react-router-dom'
 import { SEO } from '../components/SEO'
 import styles from './PrivacyPage.module.css'
@@ -61,7 +62,7 @@ export function PrivacyPage() {
       <SEO
         title="Privacy Policy &amp; Google AdSense Cookie Disclosure | StormCast PH"
         description="Official Privacy Policy for StormCast PH. Read our transparent disclosures regarding Google AdSense cookies, DART technology, location data processing, and user data protection rights."
-        canonical="https://stormcastph.com/privacy-policy"
+        canonical={`${SITE_URL}/privacy-policy`}
         keywords="StormCast PH privacy policy, Google AdSense cookies, DART cookie opt-out, weather data privacy, GDPR CCPA compliance, RA 10173"
       />
 

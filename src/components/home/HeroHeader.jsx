@@ -68,15 +68,17 @@ export function HeroHeader({
       {!alertDismissed && (
         <aside className={styles.alertBanner} aria-label="Philippine Area of Responsibility Status">
           <div className={styles.alertLeft}>
-            <span className={styles.pulseDot} aria-hidden="true" />
-            <strong className={styles.alertTag}>PAR MONITORING</strong>
+            <div className={styles.alertBadgeRow}>
+              <span className={styles.pulseDot} aria-hidden="true" />
+              <strong className={styles.alertTag}>PAR MONITORING</strong>
+            </div>
             <span className={styles.alertMessage}>
               🟢 <strong>Normal Maritime Flow:</strong> No active tropical cyclone inside PAR today. Convective rainbands active.
             </span>
           </div>
 
           <div className={styles.alertActions}>
-            <Link to="/typhoon-history" className={styles.alertCta}>
+            <Link to="/history" className={styles.alertCta}>
               TCWS Guide
             </Link>
             <button

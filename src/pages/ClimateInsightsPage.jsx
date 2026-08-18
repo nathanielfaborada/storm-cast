@@ -1,3 +1,4 @@
+import { SITE_URL } from '../site.config.js'
 import { useSearchParams } from 'react-router-dom'
 import { SEO } from '../components/SEO'
 import { ClimateDriversCard } from '../components/history/ClimateDriversCard'
@@ -18,7 +19,7 @@ export function ClimateInsightsPage() {
       <SEO
         title="Philippine Climate Insights | Monsoons, ENSO Teleconnections & Sea Surface Temperatures | StormCast PH"
         description="Detailed meteorological analysis of the Philippine climate regime: Amihan and Habagat monsoon schedules, ITCZ rainbands, ENSO cycles (El Niño & La Niña), and Western Pacific ocean heat content."
-        canonical="https://stormcastph.com/climate"
+        canonical={`${SITE_URL}/climate`}
         keywords="Philippine climate, Amihan, Habagat, southwest monsoon, northeast monsoon, ITCZ, ENSO, El Niño, La Niña, sea surface temperature, PAR climatology"
       />
 

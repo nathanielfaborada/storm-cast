@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { SITE_URL } from '../../site.config.js'
 import styles from './FamilyEmergencyPlanGenerator.module.css'
 
 export function FamilyEmergencyPlanGenerator() {
@@ -25,7 +26,7 @@ export function FamilyEmergencyPlanGenerator() {
 📞 Safe-Zone Contact: ${formData.outOfTownContact || 'None specified'}
 💊 Special Needs / Provisions: ${formData.specialNeeds || 'None listed'}
 ━━━━━━━━━━━━━━━━━━━━
-Generated via StormCast PH (https://stormcastph.com/preparedness)`
+Generated via StormCast PH (${SITE_URL}/preparedness)`
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(textSnippet).then(() => {

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
+import { CookieConsent } from './components/CookieConsent'
 import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
 import { ScrollToTop } from './components/ScrollToTop'
@@ -139,6 +140,8 @@ export default function App() {
         </Routes>
       </div>
       <Footer />
+      <CookieConsent />
     </div>
   )
 }
+

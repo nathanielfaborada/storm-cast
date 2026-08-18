@@ -1,3 +1,4 @@
+import { SITE_URL } from '../site.config.js'
 import { Link, useSearchParams } from 'react-router-dom'
 import { SEO } from '../components/SEO'
 import {
@@ -22,7 +23,7 @@ export function PreparednessHubPage() {
       <SEO
         title="Philippine Disaster Preparedness Hub | Interactive Emergency Plan, Supply Calculator & Life-Safety Suite | StormCast PH"
         description="Comprehensive life-safety suite for Philippine typhoons: Interactive Family Emergency Action Plan generator, 72h household supply & water calculator, evacuation risk estimator, emergency radio dials, and leptospirosis prevention."
-        canonical="https://stormcastph.com/preparedness"
+        canonical={`${SITE_URL}/preparedness`}
         keywords="Philippine disaster preparedness, family emergency action plan generator, go bag calculator, evacuation risk estimator, emergency radio frequencies DZRH DZBB, leptospirosis prevention"
       />
 

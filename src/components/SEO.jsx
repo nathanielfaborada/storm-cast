@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { SITE_URL } from '../site.config.js'
 
 /**
  * SEO Component for Dynamic Document Head & OpenGraph Metadata
@@ -7,9 +8,9 @@ import { useEffect } from 'react'
 export function SEO({
   title = 'StormCast PH | Philippine Weather Forecast & Typhoon Tracker',
   description = 'Real-time Philippine weather forecasts, PAGASA-aligned storm awareness, and Western Pacific typhoon history tracking.',
-  canonical = 'https://stormcastph.com/',
+  canonical = `${SITE_URL}/`,
   ogType = 'website',
-  ogImage = 'https://stormcastph.com/og-preview.png',
+  ogImage = `${SITE_URL}/og-preview.png`,
   keywords = 'Philippine weather, typhoon tracker, PAGASA signals, bagyo history, Manila forecast, storm surge warning',
 }) {
   useEffect(() => {
@@ -60,3 +61,6 @@ export function SEO({
 }
 
 export default SEO
+
+// Resume with -c (or command below):
+// agy --conversation=78115850-f1f3-4c01-a437-fda7a2fd3662

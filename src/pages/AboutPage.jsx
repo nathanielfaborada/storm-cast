@@ -1,3 +1,4 @@
+import { SITE_URL } from '../site.config.js'
 import { useSearchParams } from 'react-router-dom'
 import { SEO } from '../components/SEO'
 import styles from './AboutPage.module.css'
@@ -117,7 +118,7 @@ export function AboutPage() {
       <SEO
         title="About StormCast PH | Mission, Climatology & Data Transparency"
         description="Learn about StormCast PH's mission to deliver accessible Philippine weather intelligence, meteorological data sources, and community disaster preparedness education."
-        canonical="https://stormcastph.com/about"
+        canonical={`${SITE_URL}/about`}
         keywords="StormCast PH about, Philippine climatology, Open-Meteo models, PAGASA DOST data, weather forecasting methodology, disaster risk reduction"
       />
 
@@ -195,6 +196,50 @@ export function AboutPage() {
                 <p className={styles.sourceDetail}>{source.detail}</p>
               </div>
             ))}
+          </div>
+        </article>
+
+        {/* 4. Creator / Author Attribution — Required for Google E-E-A-T */}
+        <article className={styles.authorCard} aria-label="About the Creator of StormCast PH">
+          <div className={styles.cardHeaderStack}>
+            <div className={styles.badgeRow}>
+              <span className={styles.topBadgeAuthor}>👤 Creator</span>
+              <span className={styles.sourceBadgeOverview}>Open Source</span>
+            </div>
+            <h3 className={styles.authorTitle}>About the Creator</h3>
+          </div>
+
+          <div className={styles.authorBody}>
+            <div className={styles.authorNameRow}>
+              <span className={styles.authorAvatar} aria-hidden="true">🌀</span>
+              <div className={styles.authorMeta}>
+                <strong className={styles.authorName}>Nathaniel Faborada</strong>
+                <span className={styles.authorLocation}>📍 Bulacan, Central Luzon, Philippines</span>
+              </div>
+            </div>
+
+            <p className={styles.authorBio}>
+              StormCast PH is independently built and maintained by Nathaniel Faborada, a Filipino
+              software developer and weather enthusiast from Bulacan. This platform was created out
+              of a personal passion for meteorology and a commitment to making accurate, real-time
+              typhoon and weather data freely accessible to every Filipino household — especially
+              during storm season.
+            </p>
+
+            <p className={styles.authorBio}>
+              Growing up in Central Luzon, a region frequently in the path of typhoons crossing
+              Luzon, Nathaniel built StormCast PH to bridge the gap between complex meteorological
+              data and community-level disaster awareness.
+            </p>
+
+            <a
+              href="mailto:faboradanathaniel@gmail.com"
+              className={styles.authorEmailLink}
+              aria-label="Email Nathaniel Faborada"
+            >
+              <span aria-hidden="true">✉️</span>
+              faboradanathaniel@gmail.com
+            </a>
           </div>
         </article>
       </section>
