@@ -12,6 +12,7 @@ export function SEO({
   ogType = 'website',
   ogImage = `${SITE_URL}/og-preview.png`,
   keywords = 'Philippine weather, typhoon tracker, PAGASA signals, bagyo history, Manila forecast, storm surge warning',
+  structuredData = null,
 }) {
   useEffect(() => {
     // 1. Update Document Title
@@ -55,7 +56,19 @@ export function SEO({
       document.head.appendChild(canonicalLink)
     }
     canonicalLink.setAttribute('href', canonical)
-  }, [title, description, canonical, ogType, ogImage, keywords])
+
+    // 7. Inject JSON-LD structured data if provided
+    if (structuredData) {
+      let scriptTag = document.querySelector('#dynamic-jsonld')
+      if (!scriptTag) {
+        scriptTag = document.createElement('script')
+        scriptTag.id = 'dynamic-jsonld'
+        scriptTag.type = 'application/ld+json'
+        document.head.appendChild(scriptTag)
+      }
+      scriptTag.textContent = JSON.stringify(structuredData)
+    }
+  }, [title, description, canonical, ogType, ogImage, keywords, structuredData])
 
   return null
 }

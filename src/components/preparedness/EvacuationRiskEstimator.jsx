@@ -7,20 +7,14 @@ export function EvacuationRiskEstimator() {
   const [stormWarning, setStormWarning] = useState('tcws3')
 
   // Calculate dynamic urgency logic
-  let riskLevel = 'critical'
-  let statusBadge = '🚨 MANDATORY IMMEDIATE EVACUATION'
-  let statusTitle = 'Critical Life-Safety Threat Detected'
-  let advice =
-    'Your housing structure or geographic exposure presents severe life-safety threats under current typhoon forecasts. Execute early preemptive evacuation in daylight before roads flood or winds exceed 60 km/h.'
-  let actionPoints = [
-    'Grab your 72-hour family emergency Go-Bag',
-    'Shut off the main electrical circuit breaker and LPG regulator',
-    'Relocate immediately to your designated LGU / Barangay Evacuation Center',
-  ]
+  let riskLevel
+  let statusBadge
+  let statusTitle
+  let advice
+  let actionPoints
 
   const isLight = houseType === 'light'
   const isSemi = houseType === 'semi'
-  const isSurge = hazardLocation === 'surge'
   const isRiverOrSlope = hazardLocation === 'river' || hazardLocation === 'slope'
   const isInland = hazardLocation === 'inland'
 

@@ -12,6 +12,7 @@ import { useForecastData } from './hooks/useForecastData'
 import { AboutPage } from './pages/AboutPage'
 import { ClimateInsightsPage } from './pages/ClimateInsightsPage'
 import { ContactPage } from './pages/ContactPage'
+import { GuidesPage } from './pages/GuidesPage'
 import { HomePage } from './pages/HomePage'
 import { LiveRadarPage } from './pages/LiveRadarPage'
 import { NotFoundPage } from './pages/NotFoundPage'
@@ -105,7 +106,12 @@ export default function App() {
             }
           />
 
-          {/* 2. Typhoon History & Case Studies */}
+          {/* 2. Weather & Climatology Guides */}
+          <Route path="/guides" element={<GuidesPage />} />
+          <Route path="/learn" element={<Navigate to="/guides" replace />} />
+          <Route path="/weather-guides" element={<Navigate to="/guides" replace />} />
+
+          {/* 3. Typhoon History & Case Studies */}
           <Route path="/history" element={<TyphoonHistoryPage />} />
           <Route path="/typhoon-history" element={<Navigate to="/history" replace />} />
           <Route path="/typhoons" element={<Navigate to="/history" replace />} />

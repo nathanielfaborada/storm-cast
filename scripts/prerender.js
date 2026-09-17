@@ -1,3 +1,4 @@
+/* global process */
 /**
  * prerender.js — StormCast PH Static Site Generation Script
  *
@@ -24,6 +25,7 @@ const distDir = path.join(rootDir, 'dist')
 // Keep this in sync with App.jsx routes. Redirect-only routes are excluded.
 const routesToRender = [
   '/',
+  '/guides',
   '/history',
   '/climate',
   '/preparedness',
@@ -40,6 +42,11 @@ const routeMeta = {
     title: 'StormCast PH | Philippine Weather Forecast & Typhoon Tracker',
     description:
       'Real-time Philippine weather forecasts, PAGASA-aligned storm awareness, and Western Pacific typhoon history tracking.',
+  },
+  '/guides': {
+    title: 'Philippine Weather & Climatology Knowledge Hub | StormCast PH',
+    description:
+      'Comprehensive educational guides on Philippine typhoons, Amihan and Habagat monsoons, DOST-PAGASA TCWS signals, storm surges, Sierra Madre dynamics, and Doppler radar.',
   },
   '/history': {
     title: 'Typhoon History & Case Studies | StormCast PH',
@@ -143,7 +150,7 @@ async function prerender() {
     // Inject/replace the description meta tag
     if (pageHtml.includes('name="description"')) {
       pageHtml = pageHtml.replace(
-        /<meta name="description" content=".*?".*?\/>/,
+        /<meta\s+[^>]*?name="description"[^>]*?\/?>/s,
         `<meta name="description" content="${escapeHtml(meta.description)}" />`,
       )
     } else {

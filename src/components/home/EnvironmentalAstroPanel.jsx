@@ -29,7 +29,9 @@ export function EnvironmentalAstroPanel({ location }) {
               <span className={styles.panelIcon} aria-hidden="true">🌿</span>
               <h3 className={styles.cardTitle}>Air Quality & Solar Radiation</h3>
             </div>
-            <p className={styles.cardSubtitle}>Real-time surface air chemistry & UV index</p>
+            <p className={styles.cardSubtitle}>
+              Real-time surface air chemistry &amp; UV index{location?.name ? ` • ${location.name}` : ''}
+            </p>
           </div>
           <span className={styles.headerBadge}>Surface Telemetry</span>
         </div>

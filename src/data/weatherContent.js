@@ -1,5 +1,6 @@
 export const navItems = [
   { label: 'Home', path: '/' },
+  { label: 'Weather Guides', path: '/guides' },
   { label: 'Typhoon History', path: '/history' },
   { label: 'Climate Insights', path: '/climate' },
   { label: 'Preparedness Hub', path: '/preparedness' },
@@ -14,6 +15,13 @@ export const navSections = [
     items: [
       { label: 'Weather Forecast', path: '/?view=forecast', icon: '🌤️', desc: 'Live metrics, 24-hr & 7-day municipal outlook' },
       { label: 'Disaster Readiness', path: '/?view=readiness', icon: '🛡️', desc: 'Satellite synthesis, Go-Bag & TCWS guide' },
+    ],
+  },
+  {
+    category: 'Weather Guides & Knowledge',
+    items: [
+      { label: 'Meteorological Guides', path: '/guides', icon: '📚', desc: '8 in-depth guides on typhoons, monsoons & radar physics' },
+      { label: 'Climatology FAQs', path: '/guides#faq', icon: '❓', desc: 'Expert Q&A on PAGASA signals, storm surge & safety' },
     ],
   },
   {
@@ -219,10 +227,11 @@ export const namedTyphoonTopics = [
     year: 2024,
     localName: 'Pepito',
     category: 'Super Typhoon (Category 5)',
-    maxWinds: '195 km/h (gusts up to 240 km/h)',
-    impactedAreas: 'Catanduanes, Aurora, Polillo Islands, Central Luzon',
+    maxWinds: '195 km/h sustained (gusts to 260 km/h)',
+    centralPressure: '920 hPa',
+    impactedAreas: 'Catanduanes, Aurora, Polillo Islands, Quirino, Nueva Vizcaya',
     fallback:
-      'Super Typhoon Pepito (Man-yi) made landfall as an intense super typhoon in Catanduanes and Aurora, bringing catastrophic storm surges, torrential rains, and severe wind destruction.',
+      'Super Typhoon Pepito (Man-yi) was the culmination of an unprecedented series of six consecutive tropical cyclones impacting the Philippines in November 2024. Pepito reached Category 5 super typhoon intensity with 10-minute sustained winds of 195 km/h before making its initial landfall in Panganiban, Catanduanes, followed by a second violent landfall in Dipaculao, Aurora. It produced destructive storm surges up to 4.5 meters in Baler and Catanduanes, uprooted century-old trees, and sheared transmission lines across Central and Northern Luzon.',
   },
   {
     title: 'Severe Tropical Storm Trami',
@@ -230,9 +239,10 @@ export const namedTyphoonTopics = [
     localName: 'Kristine',
     category: 'Severe Tropical Storm',
     maxWinds: '95 km/h (gusts up to 140 km/h)',
-    impactedAreas: 'Bicol Region, Batangas, Quezon, Northern Luzon',
+    centralPressure: '985 hPa',
+    impactedAreas: 'Bicol Region, Naga City, Batangas, Quezon, Northern Luzon',
     fallback:
-      'Severe Tropical Storm Kristine (Trami) dumped historic volumes of rainfall across the Bicol Region and Southern Luzon, triggering massive flash floods and landslides.',
+      'Severe Tropical Storm Kristine (Trami) became one of the most hydro-meteorologically devastating storms of recent decades. Despite having moderate wind speeds (95 km/h), its massive 700-kilometer circulation dumped over 709 mm of torrential rainfall in Daet, Camarines Norte within 24 hours — exceeding two months of normal regional precipitation. Naga City and surrounding Bicol municipalities suffered catastrophic submergence, while massive volcanic debris flows and saturated mudslides swept through Talisay and Agoncillo in Batangas.',
   },
   {
     title: 'Typhoon Gaemi',
@@ -240,89 +250,98 @@ export const namedTyphoonTopics = [
     localName: 'Carina',
     category: 'Typhoon / Habagat Enhancement',
     maxWinds: '165 km/h',
-    impactedAreas: 'Metro Manila, Rizal, Bulacan, Bataan, Northern Luzon',
+    centralPressure: '940 hPa',
+    impactedAreas: 'Metro Manila, Rizal, Bulacan, Bataan, Cavite, Northern Luzon',
     fallback:
-      'Typhoon Carina (Gaemi) supercharged the Southwest Monsoon (Habagat), resulting in intense non-stop precipitation and widespread urban flooding across Metro Manila and surrounding provinces.',
+      'Although Typhoon Carina (Gaemi) tracked east of Taiwan without directly making landfall on Philippine soil, its powerful cyclonic vortex acted as a massive atmospheric siphon, pulling the Southwest Monsoon (Habagat) directly across Western Luzon. Over 460 mm of relentless monsoon rain fell over Metro Manila in 24 hours, causing the Marikina River to reach 20.7 meters (exceeding its 3rd Alarm evacuation threshold) and submerging EDSA, España, and vast residential districts across Malabon, Navotas, and Bulacan.',
   },
   {
     title: 'Typhoon Doksuri',
     year: 2023,
     localName: 'Egay',
     category: 'Super Typhoon',
-    maxWinds: '175 km/h',
-    impactedAreas: 'Babuyan Islands, Cagayan, Ilocos Norte, Northern Luzon',
+    maxWinds: '175 km/h (gusts up to 215 km/h)',
+    centralPressure: '935 hPa',
+    impactedAreas: 'Babuyan Islands, Cagayan, Ilocos Norte, Apayao',
     fallback:
-      'Typhoon Doksuri, locally known as Egay, battered northern Luzon with destructive eyewall winds, high storm surges, and extensive agricultural and infrastructure damage.',
+      'Typhoon Doksuri (Egay) battered Northern Luzon with destructive eyewall winds, performing a looping cyclonic trajectory near the Babuyan Islands. Fuga and Calayan Islands sustained direct eyewall strikes with wind gusts exceeding 215 km/h. Egay caused extensive storm surges, severed bridges across Cagayan Valley, triggered massive landslides in the Cordillera Administrative Region, and damaged more than ₱15 billion in agricultural and public infrastructure.',
   },
   {
     title: 'Typhoon Noru',
     year: 2022,
     localName: 'Karding',
     category: 'Super Typhoon',
-    maxWinds: '195 km/h',
-    impactedAreas: 'Polillo Islands, Aurora, Nueva Ecija, Bulacan',
+    maxWinds: '195 km/h (gusts up to 240 km/h)',
+    centralPressure: '920 hPa',
+    impactedAreas: 'Polillo Islands, Burdeos, Aurora, Nueva Ecija, Bulacan',
     fallback:
-      'Typhoon Noru, locally known as Karding, underwent explosive rapid intensification before striking Luzon with violent winds and heavy rainfall.',
+      'Super Typhoon Karding (Noru) holds the meteorological distinction of one of the fastest rapidly intensifying tropical cyclones ever recorded in the Western Pacific, exploding from a Category 1 storm to a Category 5 super typhoon with winds jumping by 90 km/h in just 6 hours over the Philippine Sea. It slammed directly into the Polillo Islands and Dingalan, Aurora, flattening the rice granary of Central Luzon right before harvest season with severe wind shear and riverine flooding.',
   },
   {
     title: 'Typhoon Rai',
     year: 2021,
     localName: 'Odette',
     category: 'Super Typhoon (Category 5)',
-    maxWinds: '195 km/h (gusts up to 260 km/h)',
-    impactedAreas: 'Siargao, Dinagat Islands, Bohol, Cebu, Palawan',
+    maxWinds: '195 km/h sustained (gusts up to 260 km/h)',
+    centralPressure: '915 hPa',
+    impactedAreas: 'Siargao, Dinagat Islands, Southern Leyte, Bohol, Cebu, Palawan',
     fallback:
-      'Typhoon Rai, locally known as Odette, tore through the Visayas and Mindanao, causing catastrophic wind devastation, total blackouts, and coastal damage comparable to Haiyan.',
+      'Super Typhoon Odette (Rai) tore through Visayas and northern Mindanao with nine separate landfalls, beginning at Siargao Island. Odette underwent unexpected rapid intensification right before landfall, reaching Category 5 status with catastrophic 260 km/h gusts. It leveled entire resort communities in Siargao and Dinagat Islands, destroyed high-voltage electrical grids across Bohol and Metro Cebu, knocked out municipal water distribution for weeks, and caused damages exceeding ₱51 billion.',
   },
   {
     title: 'Typhoon Vamco',
     year: 2020,
     localName: 'Ulysses',
     category: 'Typhoon',
-    maxWinds: '155 km/h',
-    impactedAreas: 'Metro Manila, Marikina, Rizal, Cagayan Valley',
+    maxWinds: '155 km/h (gusts up to 205 km/h)',
+    centralPressure: '955 hPa',
+    impactedAreas: 'Metro Manila, Marikina, Rodriguez, Rizal, Cagayan Valley',
     fallback:
-      'Typhoon Vamco (Ulysses) brought severe river flooding along Marikina and Cagayan river basins following consecutive tropical cyclones in late 2020.',
+      'Typhoon Ulysses (Vamco) struck just days after Super Typhoon Rolly had saturated Luzon soils. Ulysses crossed Quezon and Rizal, delivering historic nighttime rainfall over the Sierra Madre catchment. The Marikina River surged to 22.0 meters, exceeding Typhoon Ondoy 2009 levels and trapping thousands of residents on rooftops in Provident Village and San Mateo. Massive emergency water releases from Magat Dam subsequently inundated the entire Cagayan Valley under vast lakes of muddy water.',
   },
   {
     title: 'Typhoon Goni',
     year: 2020,
     localName: 'Rolly',
     category: 'Super Typhoon (Category 5)',
-    maxWinds: '225 km/h (10-min sustained)',
-    impactedAreas: 'Catanduanes, Albay, Bicol Region, Southern Luzon',
+    maxWinds: '225 km/h 10-min sustained (1-min: 315 km/h)',
+    centralPressure: '905 hPa',
+    impactedAreas: 'Catanduanes, Albay, Camarines Sur, Batangas',
     fallback:
-      'Typhoon Goni (Rolly) was one of the strongest landfalling tropical cyclones in global history upon striking Catanduanes and Albay with devastating winds and lahar flows.',
+      'Super Typhoon Rolly (Goni) ranks as the strongest landfalling tropical cyclone in recorded global meteorological history by 1-minute sustained wind standards (315 km/h). Rolly made its initial direct landfall in Bato, Catanduanes, obliterating 90% of local infrastructure. Its violent second landfall near Tiwi, Albay triggered volcanic mudflows (lahar) down the slopes of Mount Mayon, burying entire communities in San Francisco and Guinobatan under boulders and volcanic ash.',
   },
   {
     title: 'Typhoon Mangkhut',
     year: 2018,
     localName: 'Ompong',
     category: 'Super Typhoon',
-    maxWinds: '205 km/h',
-    impactedAreas: 'Cagayan, Benguet, Ilocos Region, Cordilleras',
+    maxWinds: '205 km/h (gusts up to 285 km/h)',
+    centralPressure: '905 hPa',
+    impactedAreas: 'Cagayan, Baggao, Benguet, Ilocos Norte, Cordilleras',
     fallback:
-      'Typhoon Mangkhut (Ompong) struck northern Luzon with catastrophic winds and triggered severe mountain landslides in Itogon, Benguet.',
+      'Super Typhoon Ompong (Mangkhut) possessed a massive cloud diameter spanning over 900 kilometers when it made landfall in Baggao, Cagayan. Its extreme gales shattered agricultural canopies and knocked out communications across northern Luzon. Most tragically, its orographic precipitation loosened mountain slopes in the mining town of Itogon, Benguet, triggering a colossal mountain landslide that engulfed a bunkhouse community and claimed over 100 lives.',
   },
   {
     title: 'Typhoon Haiyan',
     year: 2013,
     localName: 'Yolanda',
     category: 'Super Typhoon (Category 5)',
-    maxWinds: '230 km/h (1-min: 315 km/h)',
-    impactedAreas: 'Tacloban, Leyte, Samar, Eastern Visayas',
+    maxWinds: '230 km/h 10-min sustained (1-min: 315 km/h)',
+    centralPressure: '895 hPa',
+    impactedAreas: 'Guiuan, Tacloban, Leyte, Eastern Samar, Iloilo, Palawan',
     fallback:
-      'Typhoon Haiyan (Yolanda) was one of the most powerful and deadly tropical cyclones ever recorded, causing massive 5-meter storm surges and catastrophic destruction in Tacloban and Eastern Visayas.',
+      'Super Typhoon Yolanda (Haiyan) was one of the most powerful tropical cyclones ever documented on Earth, reaching an astonishing central pressure of 895 hPa. It made landfall in Guiuan, Eastern Samar before devastating Tacloban City with a 5.2-meter (17-foot) storm surge funneled through shallow San Pedro Bay. Yolanda claimed over 6,300 lives, displaced 4 million citizens, and transformed national and international disaster risk reduction, warning terminology, and building codes.',
   },
   {
     title: 'Typhoon Bopha',
     year: 2012,
     localName: 'Pablo',
     category: 'Super Typhoon (Category 5)',
-    maxWinds: '185 km/h',
-    impactedAreas: 'Davao Oriental, Compostela Valley, Mindanao',
+    maxWinds: '185 km/h (gusts up to 230 km/h)',
+    centralPressure: '930 hPa',
+    impactedAreas: 'Davao Oriental, Baganga, Compostela Valley, New Bataan',
     fallback:
-      'Typhoon Bopha (Pablo) was an unusually intense low-latitude super typhoon that caused catastrophic flash floods and debris flows in eastern Mindanao.',
+      'Typhoon Pablo (Bopha) was an extraordinarily rare meteorological phenomenon: a Category 5 super typhoon forming at an exceptionally low latitude (just 7.4°N). Mindanao, traditionally outside the main typhoon highway, was unprepared for such extreme wind forces. Pablo struck Baganga, Davao Oriental, flattening coconut plantations and funneling billions of gallons of rain down mountain ravines in New Bataan, Compostela Valley, creating a catastrophic debris flow of mud and boulders.',
   },
   {
     title: 'Typhoon Ketsana',
@@ -330,9 +349,10 @@ export const namedTyphoonTopics = [
     localName: 'Ondoy',
     category: 'Typhoon / Extreme Rainfall',
     maxWinds: '130 km/h',
-    impactedAreas: 'Metro Manila, Rizal, Laguna, Bulacan',
+    centralPressure: '960 hPa',
+    impactedAreas: 'Metro Manila, Marikina, Quezon City, Rizal, Laguna, Bulacan',
     fallback:
-      'Typhoon Ketsana (Ondoy) delivered a month of rainfall in just six hours, causing catastrophic flash floods across Metro Manila and reshaping Philippine flood management.',
+      'Typhoon Ondoy (Ketsana) is permanently etched into Philippine memory for its catastrophic precipitation rate: dumping 455 mm (17.9 inches) of rain over Metro Manila in a single 24-hour period — surpassing the area’s average monthly rainfall in just six hours. The resulting flash floods submerged 80% of Metro Manila and Rizal province, prompting the passage of the Philippine Disaster Risk Reduction and Management Act of 2010 (Republic Act 10121).',
   },
   {
     title: 'Typhoon Fengshen',
@@ -340,9 +360,10 @@ export const namedTyphoonTopics = [
     localName: 'Frank',
     category: 'Typhoon',
     maxWinds: '165 km/h',
-    impactedAreas: 'Iloilo, Panay Island, Romblon, Central Philippines',
+    centralPressure: '955 hPa',
+    impactedAreas: 'Iloilo, Panay Island, Romblon, Central Visayas',
     fallback:
-      'Typhoon Frank caused severe river flooding in Iloilo and was associated with the tragic sinking of the MV Princess of the Stars off Romblon.',
+      'Typhoon Frank caused devastating flash floods across Iloilo and Panay Island when it unexpectedly shifted westward. Frank is also remembered for the maritime catastrophe of the passenger ferry MV Princess of the Stars, which capsized off San Fernando, Romblon amid 165 km/h winds and towering 10-meter swells, leading to major maritime safety reforms by the Philippine Coast Guard and MARINA.',
   },
   {
     title: 'Typhoon Durian',
@@ -350,9 +371,10 @@ export const namedTyphoonTopics = [
     localName: 'Reming',
     category: 'Super Typhoon (Category 4)',
     maxWinds: '195 km/h',
-    impactedAreas: 'Albay, Legazpi City, Bicol Region',
+    centralPressure: '915 hPa',
+    impactedAreas: 'Albay, Legazpi City, Daraga, Guinobatan, Bicol Region',
     fallback:
-      'Typhoon Reming triggered massive volcanic mudslides (lahar) from the slopes of Mount Mayon, burying surrounding villages in Albay.',
+      'Typhoon Reming (Durian) struck the Bicol Peninsula with violent gusts up to 260 km/h. While wind damage was severe, the primary catastrophe occurred when intense rainfall mixed with millions of tons of loose volcanic ash deposits on the slopes of Mount Mayon volcano, creating massive pyroclastic mudslides (lahars) that buried entire villages in Padang and Guinobatan.',
   },
   {
     title: 'Tropical Storm Thelma',
@@ -360,9 +382,10 @@ export const namedTyphoonTopics = [
     localName: 'Uring',
     category: 'Tropical Storm',
     maxWinds: '85 km/h',
+    centralPressure: '992 hPa',
     impactedAreas: 'Ormoc City, Leyte, Visayas',
     fallback:
-      'Tropical Storm Thelma (Uring) produced sudden devastating flash flooding down deforested mountainsides around Ormoc City, resulting in thousands of casualties.',
+      'Tropical Storm Uring (Thelma) serves as a classic hydrological case study on how severe deforestation amplifies meteorological disasters. Despite having modest wind speeds of 85 km/h, Uring dumped intense rains over the deforested watershed of the Anilao and Malbasag rivers in Leyte, sending a 3-meter wall of water and debris crashing into Ormoc City within 15 minutes, causing over 5,000 casualties.',
   },
 ]
 

@@ -37,6 +37,7 @@ export function TyphoonHistoryPage() {
       localName: topic.localName,
       category: topic.category || 'Typhoon',
       maxWinds: topic.maxWinds,
+      centralPressure: topic.centralPressure,
       impactedAreas: topic.impactedAreas,
       extract: topic.fallback,
       sourceUrl: `https://en.wikipedia.org/wiki/${encodeURIComponent(topic.title)}`,
@@ -211,6 +212,9 @@ export function TyphoonHistoryPage() {
                       {record.maxWinds && (
                         <span>💨 <strong>Peak:</strong> {record.maxWinds}</span>
                       )}
+                      {record.centralPressure && (
+                        <span>⏱️ <strong>Min Pressure:</strong> {record.centralPressure}</span>
+                      )}
                       {record.impactedAreas && (
                         <span>📍 <strong>Areas:</strong> {record.impactedAreas}</span>
                       )}
@@ -221,7 +225,7 @@ export function TyphoonHistoryPage() {
 
                   <footer className={styles.cardFooter}>
                     <span className={styles.studyTypeTag}>
-                      {record.type === 'storm' ? 'Landfall Study' : 'Season Overview'}
+                      {record.type === 'storm' ? 'PAGASA Landfall Case Study' : 'Season Climatology'}
                     </span>
                     <a
                       href={record.sourceUrl}
@@ -229,7 +233,7 @@ export function TyphoonHistoryPage() {
                       rel="noreferrer"
                       className={styles.wikiLink}
                     >
-                      Wikipedia Archive ↗
+                      Technical Data Archive ↗
                     </a>
                   </footer>
                 </article>

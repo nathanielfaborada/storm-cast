@@ -99,6 +99,14 @@ export function Footer() {
                     <span className={styles.bulletDot} aria-hidden="true" />
                     <span>72-Hour Go-Bag Kit</span>
                   </Link>
+                  <Link to="/guides" className={styles.subNavLink}>
+                    <span className={styles.bulletDot} aria-hidden="true" />
+                    <span>8 Climatology Guides</span>
+                  </Link>
+                  <Link to="/guides#faq" className={styles.subNavLink}>
+                    <span className={styles.bulletDot} aria-hidden="true" />
+                    <span>Weather FAQs</span>
+                  </Link>
                 </div>
               </div>
 

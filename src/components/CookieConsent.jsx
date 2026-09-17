@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './CookieConsent.module.css'
 
@@ -17,17 +17,15 @@ const STORAGE_KEY = 'stormcast_cookie_consent'
  */
 export function CookieConsent() {
   // null = not yet determined (SSR / first paint), 'shown' or 'hidden'
-  const [bannerState, setBannerState] = useState(null)
-
-  useEffect(() => {
-    // Only runs client-side after hydration
-    const saved = localStorage.getItem(STORAGE_KEY)
-    if (!saved) {
-      setBannerState('shown')
-    } else {
-      setBannerState('hidden')
+  const [bannerState, setBannerState] = useState(() => {
+    if (typeof window === 'undefined') return null
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY)
+      return saved ? 'hidden' : 'shown'
+    } catch {
+      return 'shown'
     }
-  }, [])
+  })
 
   function handleAccept() {
     localStorage.setItem(STORAGE_KEY, 'accepted')

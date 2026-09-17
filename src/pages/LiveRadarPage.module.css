@@ -22,12 +22,20 @@
 @media (max-width: 1023px) {
   .dashboardContainer {
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 20px 16px 40px;
+    gap: 24px;
+    padding: 16px 12px 40px;
+  }
+
+  .rightPanel {
+    order: 1;
+  }
+
+  .leftPanel {
+    order: 2;
   }
 
   .mobileHidden {
-    display: none !important;
+    display: flex !important;
   }
 }
 

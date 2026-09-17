@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import stormcastLogo from '../assets/stormcast-logo.png'
 import { navItems, navSections } from '../data/weatherContent'
@@ -8,10 +8,13 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
 
-  // Close mobile dropdown automatically on route or search param change
-  useEffect(() => {
+  // Reset mobile dropdown automatically on route or search param change
+  const currentFullUrl = `${location.pathname}${location.search}`
+  const [prevUrl, setPrevUrl] = useState(currentFullUrl)
+  if (prevUrl !== currentFullUrl) {
+    setPrevUrl(currentFullUrl)
     setMobileMenuOpen(false)
-  }, [location.pathname, location.search])
+  }
 
   function handleLinkNavigation(path) {
     setMobileMenuOpen(false)
@@ -25,8 +28,6 @@ export function Navbar() {
       }, 100)
     }
   }
-
-  const currentFullUrl = `${location.pathname}${location.search}`
 
   return (
     <header className={styles.headerWrapper}>

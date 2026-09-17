@@ -54,7 +54,7 @@ export function PreparednessHubPage() {
           <span className={styles.bannerTag}>Civil Defense &amp; Resilience Suite</span>
           <h1 className={styles.bannerTitle}>Philippine Disaster Preparedness &amp; Action Hub</h1>
           <p className={styles.bannerText}>
-            Interactive life-safety tools, emergency water and food estimators, structural evacuation risk calculators, and printable family action cards aligned with NDRRMC, DOST-PAGASA, and DOH protocols.
+            Interactive life-safety tools, emergency water and food estimators, structural evacuation risk calculators, and printable family action cards aligned with NDRRMC, DOST-PAGASA, and DOH protocols. Read our <Link to="/guides" style={{ color: '#38bdf8', textDecoration: 'underline' }}>in-depth Philippine meteorological and survival guides</Link>.
           </p>
         </header>
 

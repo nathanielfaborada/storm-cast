@@ -1,5 +1,5 @@
 import { SITE_URL } from '../site.config.js'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { SEO } from '../components/SEO'
 import {
@@ -45,22 +45,9 @@ export function HomePage({
 }) {
   const [query, setQuery] = useState('')
   const [alertDismissed, setAlertDismissed] = useState(false)
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams] = useSearchParams()
   const viewParam = searchParams.get('view')
-  const [activeMobileView, setActiveMobileView] = useState(
-    viewParam === 'readiness' ? 'readiness' : 'forecast'
-  )
-
-  useEffect(() => {
-    if (viewParam === 'readiness' || viewParam === 'forecast') {
-      setActiveMobileView(viewParam)
-    }
-  }, [viewParam])
-
-  function handleTabSelect(view) {
-    setActiveMobileView(view)
-    setSearchParams({ view }, { replace: true })
-  }
+  const activeMobileView = viewParam === 'readiness' ? 'readiness' : 'forecast'
 
   // Current Date String
   const currentDateFormatted = new Intl.DateTimeFormat('en-PH', {
@@ -161,6 +148,7 @@ export function HomePage({
             </div>
 
             <div className={styles.editorialLinks}>
+              <Link to="/guides" className={styles.editorialLink}>📚 Weather Guides &amp; FAQs</Link>
               <Link to="/history" className={styles.editorialLink}>📊 Typhoon Archive</Link>
               <Link to="/climate" className={styles.editorialLink}>🌡️ Climate Insights</Link>
               <Link to="/preparedness" className={styles.editorialLink}>🏠 Preparedness Hub</Link>
