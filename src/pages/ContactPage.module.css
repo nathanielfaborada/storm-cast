@@ -940,6 +940,12 @@
   color: #64748b;
 }
 
+.creatorSla {
+  font-size: 0.68rem;
+  color: #0284c7;
+  font-weight: 700;
+}
+
 .creatorEmailBtn {
   display: inline-flex;
   align-items: center;
@@ -960,5 +966,208 @@
 .creatorEmailBtn:hover {
   background: #ccfbf1;
   color: #0f766e;
+}
+
+/* ── Interactive Editorial Contact & Feedback Message Card ── */
+.feedbackFormCard {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  padding: 20px 22px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .feedbackFormCard {
+    padding: 16px;
+    border-radius: 14px;
+    gap: 12px;
+  }
+}
+
+.topBadgeForm {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 2px 6px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.sourceBadgeForm {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 2px 6px;
+  border-radius: 5px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.formHeaderTitle {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.formHeaderSubtitle {
+  font-size: 0.78rem;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.formLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.requiredStar {
+  color: #dc2626;
+  font-weight: 800;
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: #0f172a;
+  background: #f8fafc;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.formInput:focus,
+.formSelect:focus,
+.formTextarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  background: #ffffff;
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.formSubmitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  width: fit-content;
+}
+
+.formSubmitBtn:hover {
+  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  transform: translateY(-1px);
+}
+
+.formSuccessBox {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.successIcon {
+  font-size: 2rem;
+}
+
+.successTitle {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #15803d;
+  margin: 0;
+}
+
+.successText {
+  font-size: 0.8rem;
+  color: #166534;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 520px;
+}
+
+.resetFormBtn {
+  margin-top: 6px;
+  background: #ffffff;
+  border: 1px solid #86efac;
+  color: #15803d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.resetFormBtn:hover {
+  background: #dcfce7;
 }
 

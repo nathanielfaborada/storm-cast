@@ -16,8 +16,6 @@ const categories = [
 export function GuidesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
-  const [expandedGuideId, setExpandedGuideId] = useState(null)
-  const [expandedFaqIndex, setExpandedFaqIndex] = useState(null)
 
   const filteredGuides = useMemo(() => {
     return meteorologicalGuides.filter((guide) => {
@@ -50,18 +48,10 @@ export function GuidesPage() {
     }
   }, [])
 
-  function toggleGuide(id) {
-    setExpandedGuideId((prev) => (prev === id ? null : id))
-  }
-
-  function toggleFaq(index) {
-    setExpandedFaqIndex((prev) => (prev === index ? null : index))
-  }
-
   return (
     <main className={styles.pageContainer} aria-label="Philippine Weather & Climatology Guides">
       <SEO
-        title="Philippine Weather & Climatology Knowledge Hub | StormCast PH"
+        title="Philippine Weather &amp; Climatology Knowledge Hub | StormCast PH"
         description="Comprehensive educational guides on Philippine typhoons, Amihan and Habagat monsoons, DOST-PAGASA TCWS signals, storm surges, Sierra Madre dynamics, and Doppler radar."
         canonical={`${SITE_URL}/guides`}
         keywords="Philippine weather guides, typhoon science, Amihan Habagat explanation, PAGASA TCWS warning signals, storm surge Tacloban, Sierra Madre shield, Doppler radar Philippines, emergency go-bag checklist"
@@ -100,20 +90,20 @@ export function GuidesPage() {
       <section id="guides-list" className={styles.filterSection} aria-label="Filter Guides">
         <div className={styles.searchBarRow}>
           <div className={styles.inputWrapper}>
-            <span className={styles.searchIcon} aria-hidden="true">⌕</span>
+            <span className={styles.searchIcon} aria-hidden="true">🔍</span>
             <input
               type="text"
-              placeholder="Search guides by topic, storm, monsoon, or keyword..."
+              placeholder="Search guides by title, keyword, meteorology concept..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className={styles.searchInput}
-              aria-label="Search guides"
+              aria-label="Search meteorological guides"
             />
             {searchQuery && (
               <button
                 type="button"
-                onClick={() => setSearchQuery('')}
                 className={styles.clearBtn}
+                onClick={() => setSearchQuery('')}
                 aria-label="Clear search"
               >
                 ✕
@@ -145,9 +135,7 @@ export function GuidesPage() {
 
       {/* Guides Grid */}
       <section className={styles.guidesGrid} aria-label="Meteorological Articles List">
-        {filteredGuides.map((guide) => {
-          const isExpanded = expandedGuideId === guide.id
-
+        {filteredGuides.map((guide, index) => {
           return (
             <article key={guide.id} className={styles.guideCard} id={guide.id}>
               <div className={styles.guideHeader}>
@@ -175,8 +163,15 @@ export function GuidesPage() {
                 </ul>
               </div>
 
-              {/* Expandable Full Content */}
-              {isExpanded && (
+              {/* Expandable Full Content — Rendered unconditionally in DOM via semantic <details> */}
+              <details className={styles.guideDetails} open={index < 2}>
+                <summary className={styles.guideSummaryBtn}>
+                  <span className={styles.summaryBtnText}>
+                    📖 Read Full In-Depth Guide &amp; Atmospheric Science
+                  </span>
+                  <span className={styles.summaryChevron} aria-hidden="true">▾</span>
+                </summary>
+
                 <div className={styles.fullContent}>
                   <div className={styles.markdownWrapper}>
                     {guide.content.split('\n\n').map((block, idx) => {
@@ -201,18 +196,7 @@ export function GuidesPage() {
                     })}
                   </div>
                 </div>
-              )}
-
-              <footer className={styles.cardFooter}>
-                <button
-                  type="button"
-                  onClick={() => toggleGuide(guide.id)}
-                  className={styles.toggleGuideBtn}
-                  aria-expanded={isExpanded}
-                >
-                  {isExpanded ? '▲ Collapse Guide' : '▼ Read Full Meteorological Guide'}
-                </button>
-              </footer>
+              </details>
             </article>
           )
         })}
@@ -245,28 +229,17 @@ export function GuidesPage() {
         </div>
 
         <div className={styles.faqList}>
-          {faqItems.map((item, index) => {
-            const isOpen = expandedFaqIndex === index
-
-            return (
-              <article key={index} className={styles.faqItem}>
-                <button
-                  type="button"
-                  className={styles.faqQuestionBtn}
-                  onClick={() => toggleFaq(index)}
-                  aria-expanded={isOpen}
-                >
-                  <span className={styles.faqQuestionText}>{item.q}</span>
-                  <span className={styles.faqToggleIcon}>{isOpen ? '−' : '+'}</span>
-                </button>
-                {isOpen && (
-                  <div className={styles.faqAnswerBox}>
-                    <p className={styles.faqAnswerText}>{item.a}</p>
-                  </div>
-                )}
-              </article>
-            )
-          })}
+          {faqItems.map((item, index) => (
+            <details key={index} className={styles.faqItem} open={index === 0}>
+              <summary className={styles.faqSummary}>
+                <span className={styles.faqQuestionText}>{item.q}</span>
+                <span className={styles.faqChevron} aria-hidden="true">▾</span>
+              </summary>
+              <div className={styles.faqAnswerBox}>
+                <p className={styles.faqAnswerText}>{item.a}</p>
+              </div>
+            </details>
+          ))}
         </div>
       </section>
 

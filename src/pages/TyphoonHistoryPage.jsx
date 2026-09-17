@@ -16,7 +16,7 @@ import {
 import { namedTyphoonTopics, typhoonYearTopics } from '../data/weatherContent'
 import styles from './TyphoonHistoryPage.module.css'
 
-const batchSize = 6
+const batchSize = 25
 
 export function TyphoonHistoryPage() {
   const [query, setQuery] = useState('')

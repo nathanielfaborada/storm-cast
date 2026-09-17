@@ -16,6 +16,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { build } from 'vite'
+import { SITE_URL } from '../src/site.config.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.resolve(__dirname, '..')
@@ -74,9 +75,9 @@ const routeMeta = {
       "Learn about StormCast PH's mission to deliver accessible Philippine weather intelligence, meteorological data sources, and community disaster preparedness education.",
   },
   '/contact': {
-    title: 'Contact StormCast PH | Emergency Hotlines & Agency Directory',
+    title: 'Contact StormCast PH | Publisher, Editorial Desk & Emergency Hotlines',
     description:
-      'Contact StormCast PH, access Philippine emergency hotlines (911, 143), DOST-PAGASA, NDRRMC, and the verified disaster agency directory.',
+      'Contact StormCast PH publisher Nathaniel Faborada (faboradanathaniel@gmail.com, Bulacan, PH) for meteorological feedback, guide corrections, and verified Philippine disaster emergency hotlines (911, 143, NDRRMC).',
   },
   '/privacy-policy': {
     title: 'Privacy Policy & Google AdSense Cookie Disclosure | StormCast PH',
@@ -161,7 +162,7 @@ async function prerender() {
     }
 
     // Inject static canonical <link> tag — visible to crawlers without JS
-    const canonicalUrl = `https://stormcast-ph.netlify.app${route === '/' ? '/' : route}`
+    const canonicalUrl = `${SITE_URL}${route === '/' ? '/' : route}`
     if (pageHtml.includes('rel="canonical"')) {
       pageHtml = pageHtml.replace(
         /<link rel="canonical" href=".*?".*?>/,

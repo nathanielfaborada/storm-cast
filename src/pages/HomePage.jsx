@@ -141,8 +141,8 @@ export function HomePage({
               <h3 className={styles.editorialSectionTitle}>⚠️ PAGASA Tropical Cyclone Warning Signals</h3>
               <p className={styles.editorialPara}>
                 PAGASA issues Tropical Cyclone Wind Signals (TCWS) from <strong>Signal No. 1</strong>{' '}
-                (winds 30–60 km/h expected in 36 hours) up to <strong>Signal No. 5</strong>{' '}
-                (catastrophic winds exceeding 220 km/h within 12 hours). Always follow the official
+                (winds 39–61 km/h expected in 36 hours) up to <strong>Signal No. 5</strong>{' '}
+                (catastrophic winds of 185 km/h or higher within 12 hours). Always follow the official
                 PAGASA bulletin and your Local Government Unit (LGU) for evacuation orders.
               </p>
             </div>

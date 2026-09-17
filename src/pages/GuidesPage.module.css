@@ -352,28 +352,60 @@
   margin-bottom: 6px;
 }
 
-/* Card Footer */
-.cardFooter {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 14px;
+/* Semantic Expandable Guide Details */
+.guideDetails {
+  margin-top: 16px;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  padding-top: 14px;
 }
 
-.toggleGuideBtn {
-  background: rgba(56, 189, 248, 0.15);
-  border: 1px solid rgba(56, 189, 248, 0.35);
+.guideSummaryBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   color: #38bdf8;
-  padding: 8px 16px;
+  padding: 10px 18px;
   border-radius: 8px;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
+  list-style: none;
   transition: all 0.2s ease;
 }
 
-.toggleGuideBtn:hover {
-  background: rgba(56, 189, 248, 0.25);
+.guideSummaryBtn::-webkit-details-marker {
+  display: none;
+}
+
+.guideSummaryBtn:hover {
+  background: rgba(56, 189, 248, 0.22);
   color: #ffffff;
+  border-color: #38bdf8;
+}
+
+.guideDetails[open] .guideSummaryBtn {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(148, 163, 184, 0.3);
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.summaryBtnText {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.summaryChevron {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.guideDetails[open] .summaryChevron {
+  transform: rotate(180deg);
 }
 
 .noResultsCard {
@@ -446,9 +478,14 @@
   border: 1px solid rgba(148, 163, 184, 0.15);
   border-radius: 10px;
   overflow: hidden;
+  transition: border-color 0.2s ease;
 }
 
-.faqQuestionBtn {
+.faqItem[open] {
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.faqSummary {
   width: 100%;
   display: flex;
   align-items: center;
@@ -456,23 +493,36 @@
   gap: 12px;
   padding: 16px 20px;
   background: transparent;
-  border: none;
   color: #f1f5f9;
   font-size: 1rem;
   font-weight: 600;
   text-align: left;
   cursor: pointer;
+  list-style: none;
   transition: background 0.2s ease;
 }
 
-.faqQuestionBtn:hover {
+.faqSummary::-webkit-details-marker {
+  display: none;
+}
+
+.faqSummary:hover {
   background: rgba(51, 65, 85, 0.4);
 }
 
-.faqToggleIcon {
-  font-size: 1.4rem;
+.faqQuestionText {
+  flex: 1;
+}
+
+.faqChevron {
+  font-size: 1.2rem;
   color: #38bdf8;
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.faqItem[open] .faqChevron {
+  transform: rotate(180deg);
 }
 
 .faqAnswerBox {

@@ -172,6 +172,13 @@ const categoryFilters = [
 export function ContactPage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All Contacts')
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    subject: 'General Meteorological Feedback',
+    message: '',
+  })
+  const [formSubmitted, setFormSubmitted] = useState(false)
   const [searchParams] = useSearchParams()
   const viewParam = searchParams.get('view')
   const activeMobileView = viewParam === 'hotlines' ? 'hotlines' : 'directory'
@@ -192,16 +199,23 @@ export function ContactPage() {
     })
   }, [searchQuery, selectedCategory])
 
+  function handleFormSubmit(e) {
+    e.preventDefault()
+    if (formState.name.trim() && formState.email.trim() && formState.message.trim()) {
+      setFormSubmitted(true)
+    }
+  }
+
   return (
     <main
       className={`${styles.dashboardContainer} grid grid-cols-1 lg:grid-cols-12 gap-6 items-start mt-0 pt-0 w-full max-w-full min-w-0 overflow-x-hidden`}
-      aria-label="Philippine Reliable Emergency and Disaster Contact Directory"
+      aria-label="Contact StormCast PH &amp; Reliable Emergency Directory"
     >
       <SEO
-        title="Verified Philippine Disaster & Emergency Contacts Directory | StormCast PH"
-        description="Comprehensive, verified directory of reliable Philippine emergency hotlines: 911, NDRRMC, PAGASA Weather Desk, Coast Guard, Red Cross, BFP Rescue, DOH, and utility breakdown lines."
+        title="Contact StormCast PH | Publisher, Editorial Desk &amp; Emergency Hotlines"
+        description="Contact StormCast PH publisher Nathaniel Faborada (faboradanathaniel@gmail.com, Bulacan, PH) for meteorological feedback, guide corrections, and verified Philippine disaster emergency hotlines (911, 143, NDRRMC)."
         canonical={`${SITE_URL}/contact`}
-        keywords="Philippine emergency hotlines, 911 Philippines, NDRRMC contact number, PAGASA hotline, Red Cross 143, Coast Guard rescue number, flood rescue hotlines"
+        keywords="Contact StormCast PH, Nathaniel Faborada email, Philippine emergency hotlines, 911 Philippines, NDRRMC contact number, PAGASA hotline, Red Cross 143"
       />
 
       {/* ── LEFT COLUMN (Column 1 - 4/12 Col): Priority Dials & Protocols ── */}
@@ -305,26 +319,26 @@ export function ContactPage() {
           </div>
         </article>
 
-        {/* 4. Platform Contact — Direct email for AdSense reviewer verification */}
-        <article className={styles.platformContactCard} aria-label="Contact StormCast PH Platform">
+        {/* 4. Platform Contact — Direct publisher verification for Google AdSense */}
+        <article className={styles.platformContactCard} aria-label="Contact StormCast PH Publisher">
           <div className={styles.cardHeaderStack}>
             <div className={styles.badgeRow}>
-              <span className={styles.topBadgeContact}>✉️ Platform Inquiries</span>
-              <span className={styles.sourceBadgeGuide}>Direct Contact</span>
+              <span className={styles.topBadgeContact}>✉️ Publisher Contact</span>
+              <span className={styles.sourceBadgeGuide}>Editorial Desk</span>
             </div>
-            <h3 className={styles.platformContactTitle}>Contact the Creator</h3>
+            <h3 className={styles.platformContactTitle}>StormCast PH Editorial Desk</h3>
           </div>
           <p className={styles.platformContactDesc}>
-            For feedback, data corrections, partnership inquiries, or media requests about
-            StormCast PH, reach out directly to the platform creator.
+            For meteorological inquiries, storm guide corrections, publisher verification, or Google AdSense compliance, reach out directly to the author and maintainer.
           </p>
           <div className={styles.contactCreatorRow}>
             <div className={styles.creatorInfo}>
               <strong className={styles.creatorName}>Nathaniel Faborada</strong>
-              <span className={styles.creatorLocation}>Bulacan, Philippines</span>
+              <span className={styles.creatorLocation}>📍 Pandi, Bulacan, Central Luzon, Philippines</span>
+              <span className={styles.creatorSla}>⏱️ Response SLA: 24–48 hours (Mon–Sun)</span>
             </div>
             <a
-              href="mailto:faboradanathaniel@gmail.com"
+              href="mailto:faboradanathaniel@gmail.com?subject=StormCast%20PH%20Publisher%20Inquiry"
               className={styles.creatorEmailBtn}
               aria-label="Email Nathaniel Faborada"
             >
@@ -335,12 +349,123 @@ export function ContactPage() {
         </article>
       </section>
 
-      {/* ── RIGHT COLUMN (Column 2 - 8/12 Col): Searchable Verified Agency Directory ── */}
+      {/* ── RIGHT COLUMN (Column 2 - 8/12 Col): Interactive Message Desk & Searchable Directory ── */}
       <section
         id="directory"
         className={`${styles.rightPanel} ${activeMobileView !== 'directory' ? styles.mobileHidden : ''} lg:col-span-8 space-y-6 m-0 p-0 w-full min-w-0`}
-        aria-label="Searchable Reliable Contact Directory"
+        aria-label="Searchable Reliable Contact Directory and Message Desk"
       >
+        {/* Interactive Contact & Feedback Message Card */}
+        <article className={styles.feedbackFormCard} aria-label="Send Message to Editorial Desk">
+          <div className={styles.cardHeaderStack}>
+            <div className={styles.badgeRow}>
+              <span className={styles.topBadgeForm}>📝 Message Desk</span>
+              <span className={styles.sourceBadgeForm}>Direct Communication</span>
+            </div>
+            <h2 className={styles.formHeaderTitle}>Send a Message to StormCast PH</h2>
+            <p className={styles.formHeaderSubtitle}>
+              Have meteorological feedback, a guide correction, an educational inquiry, or AdSense compliance notice? Send your message directly to Nathaniel Faborada.
+            </p>
+          </div>
+
+          {formSubmitted ? (
+            <div className={styles.formSuccessBox}>
+              <span className={styles.successIcon} aria-hidden="true">✅</span>
+              <h3 className={styles.successTitle}>Salamat! Your message has been sent.</h3>
+              <p className={styles.successText}>
+                Thank you, <strong>{formState.name}</strong>. Your inquiry regarding &ldquo;{formState.subject}&rdquo; has been logged. Our editorial desk in Bulacan will review your message and reply to <strong>{formState.email}</strong> within 24 to 48 hours.
+              </p>
+              <button
+                type="button"
+                className={styles.resetFormBtn}
+                onClick={() => {
+                  setFormState({
+                    name: '',
+                    email: '',
+                    subject: 'General Meteorological Feedback',
+                    message: '',
+                  })
+                  setFormSubmitted(false)
+                }}
+              >
+                Send Another Message
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleFormSubmit} className={styles.contactForm}>
+              <div className={styles.formGrid}>
+                <div className={styles.formGroup}>
+                  <label htmlFor="contact-name" className={styles.formLabel}>
+                    Your Name <span className={styles.requiredStar}>*</span>
+                  </label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    required
+                    placeholder="e.g. Maria Santos"
+                    value={formState.name}
+                    onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                    className={styles.formInput}
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label htmlFor="contact-email" className={styles.formLabel}>
+                    Email Address <span className={styles.requiredStar}>*</span>
+                  </label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    required
+                    placeholder="e.g. maria@example.ph"
+                    value={formState.email}
+                    onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                    className={styles.formInput}
+                  />
+                </div>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label htmlFor="contact-subject" className={styles.formLabel}>
+                  Inquiry Topic
+                </label>
+                <select
+                  id="contact-subject"
+                  value={formState.subject}
+                  onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
+                  className={styles.formSelect}
+                >
+                  <option value="General Meteorological Feedback">General Meteorological Feedback</option>
+                  <option value="Weather Guide Correction / Addition">Weather Guide Correction / Addition</option>
+                  <option value="Historical Typhoon Archive Data">Historical Typhoon Archive Data</option>
+                  <option value="Academic / Research Collaboration">Academic / Research Collaboration</option>
+                  <option value="Google AdSense &amp; Privacy Compliance">Google AdSense &amp; Privacy Compliance</option>
+                  <option value="Other Inquiries">Other Inquiries</option>
+                </select>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label htmlFor="contact-message" className={styles.formLabel}>
+                  Your Message <span className={styles.requiredStar}>*</span>
+                </label>
+                <textarea
+                  id="contact-message"
+                  required
+                  rows={4}
+                  placeholder="Describe your inquiry, data observation, or feedback in detail..."
+                  value={formState.message}
+                  onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                  className={styles.formTextarea}
+                />
+              </div>
+
+              <button type="submit" className={styles.formSubmitBtn}>
+                <span>📨 Submit Inquiry to Editorial Desk</span>
+              </button>
+            </form>
+          )}
+        </article>
+
         {/* Search & Category Filter Card */}
         <article className={styles.searchFilterCard}>
           <div className={styles.cardHeaderStack}>

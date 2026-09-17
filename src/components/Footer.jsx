@@ -221,6 +221,14 @@ export function Footer() {
           </div>
 
           <div className={styles.legalLinks}>
+            <Link to="/about" className={styles.legalLink}>
+              About Us
+            </Link>
+            <span className={styles.divider} aria-hidden="true">•</span>
+            <Link to="/contact" className={styles.legalLink}>
+              Contact Us
+            </Link>
+            <span className={styles.divider} aria-hidden="true">•</span>
             <Link to="/privacy-policy?view=policy" className={styles.legalLink}>
               Privacy Policy
             </Link>
